@@ -1,0 +1,7 @@
+predictor,eligibility_status,earliest_entry_stage,is_endometriosis_specific
+AGE,eligible,1,False
+nulliparity,eligible,1,False
+S_P_CS,eligible,1,False
+BMI_before,eligible,1,False
+derived_hypertension_pih_pet_spectrum,eligible,1,False
+induction_any_bin,eligible,3,False

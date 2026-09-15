@@ -1,0 +1,112 @@
+{
+  "stage": "data_cleaning_b",
+  "created_utc": "2026-09-01T10:21:20+00:00",
+  "input_file": "work_df_batch18.xlsx",
+  "input_sha256": "6e213345ca6cd7d8941d13c993b8f1fe6fb5d22469a714d3b9ea50cae472d290",
+  "output_file": "work_df_batch19_after_data_cleaning_b.xlsx",
+  "output_sha256": "e9cd7a9a88b05c4fa135f9b74fc40ce04dfdeee822ab7473951cda5e7b68d08c",
+  "input_rows": 431,
+  "cleaned_rows": 431,
+  "row_exclusions_applied": false,
+  "target_0": 370,
+  "target_1": 61,
+  "scope_original_columns": 72,
+  "b_created_columns": 22,
+  "cleaned_columns_total": 82,
+  "pprom_timing_derived_family_excluded_from_export": true,
+  "pprom_timing_raw_column_retained_in_export": true,
+  "pprom_timing_feature_family_requested": [
+    "gestational_age_at_PPROM_days__missing_ind",
+    "gestational_age_at_PPROM_days__cat"
+  ],
+  "pprom_timing_feature_family_present_before_exclusion": [],
+  "pprom_timing_feature_family_excluded_from_output": [],
+  "pprom_timing_feature_family_absent_before_exclusion": [
+    "gestational_age_at_PPROM_days__missing_ind",
+    "gestational_age_at_PPROM_days__cat"
+  ],
+  "pprom_timing_feature_family_exclusion_reason": "gestational_age_at_PPROM_days has 415 missing values (96.3%) whole-cohort (PRIMARY figure; structural-applicability-aware sensitivity/diagnostic missingness is 5.9%: 1/17 applicable PPROM==1 rows genuinely missing -- diagnostic only, does not replace the PRIMARY whole-cohort figure). Raw column retained in the cleaned/audit export and admitted to EDA C's model-candidate pool (ANALYSIS_VARS), tagged model_entry_mode=transform_source_only -- it may feed the fold-safe timing transformer internally but must never independently enter a design matrix as a plain numeric predictor. Retired derived missingness/Unknown encodings (__missing_ind/__cat) remain excluded from export, superseded by the documented-only gestational_age_at_PPROM_days_timing_status. See structural_missingness_registry.py APPLICABILITY_LINKED_NO_PREPROCESSING_MASK for the structural-vs-undocumented missingness breakdown.",
+  "endo_resection_structural_recode_applied": true,
+  "endo_resection_recode_cols": [
+    "endo_resection_adhesiolysis",
+    "endo_resection_adnexa",
+    "endo_resection_appendix",
+    "endo_resection_epiploica",
+    "endo_resection_fallopian_tube",
+    "endo_resection_lesion",
+    "endo_resection_no_resection",
+    "endo_resection_ovarian_endometrioma_bilateral",
+    "endo_resection_ovarian_endometrioma_unilateral",
+    "endo_resection_uterus"
+  ],
+  "BMI_after_cat_materialized_in_B": false,
+  "BMI_after_cat_cutpoint_source": "fold_safe_training_only",
+  "weight_in_pregnancy_cat_materialized_in_B": false,
+  "weight_in_pregnancy_cat_cutpoint_source": "fold_safe_training_only",
+  "gestational_age_at_PPROM_days_timing_status_materialized_in_B": false,
+  "gestational_age_at_PPROM_days_timing_status_cutpoint_source": "fold_safe_training_only",
+  "gestational_age_at_PPROM_days_timing_status_applicable_n": 17,
+  "gestational_age_at_PPROM_days_timing_status_genuine_missing_applicable_n": 1,
+  "adenomyosis_multihot_imputation_method": "none",
+  "adenomyosis_multihot_per_code_counts": {
+    "1": 69,
+    "2": 6,
+    "3": 46,
+    "4": 39,
+    "5": 22,
+    "6": 4,
+    "7": 1,
+    "8": 1,
+    "9": 4,
+    "10": 10,
+    "11": 1
+  },
+  "adenomyosis_features_unknown_count": 39,
+  "adenomyosis_detail_excluded_from_output": [
+    "adenomyosis_sonographic_features_clean"
+  ],
+  "adenomyosis_detail_exclusion_reason": "adenomyosis_sonographic_features_clean is row-applicability gated (adenomyosis==1) and replaced in the export by the deterministic, lossless multi-hot representation (adenomyosis_feature_1..11 + adenomyosis_features_unknown), in place of a combination-level adenomyosis_sonographic_features_status categorical.",
+  "endometrioma_size_status_cutoff_mm": 30.0,
+  "endometrioma_size_status_imputation_method": "none",
+  "endometrioma_size_status_counts": {
+    "no_endometrioma": 238,
+    "endometrioma_30mm_or_more": 104,
+    "endometrioma_less_than_30mm": 67,
+    "endometrioma_size_unknown": 22
+  },
+  "endometrioma_presence_laterality_imputation_method": "none; unresolved laterality is the explicit laterality_unknown category, not imputed and not true missing",
+  "endometrioma_presence_laterality_counts": {
+    "none": 238,
+    "unilateral": 125,
+    "bilateral": 63,
+    "laterality_unknown": 5
+  },
+  "endometrioma_detail_excluded_from_output": [
+    "endometrioma_size_clean",
+    "endometrioma_place_clean",
+    "endometrioma_laterality"
+  ],
+  "endometrioma_detail_exclusion_reason": "endometrioma_size_clean, endometrioma_place_clean, and endometrioma_laterality (and their __missing_ind indicators) are replaced by deterministic derived variables endometrioma_size_status and endometrioma_presence_laterality. endometrioma_size_status distinguishes no endometrioma, known <30mm, known >=30mm, and endometrioma present with genuinely unknown size, without upstream size imputation. endometrioma_presence_laterality represents genuinely unresolved endometrioma==1 laterality as the explicit laterality_unknown category (0 missing) rather than full-cohort mode-imputing it or leaving it as true NaN.",
+  "pending_timing_confirmation_classification": "intrapartum_candidate_pending_timing_confirmation",
+  "pending_timing_confirmation_columns": [],
+  "pending_timing_confirmation_exclusion_reason": "Variables known or potentially known during labor whose availability before the intrapartum cesarean decision has not yet been clinically confirmed. Data Cleaning B preserves its existing cleaning/audit handling for these columns, but downstream EDA/modeling must exclude them from primary and secondary predictor pools pending clinical timing confirmation.",
+  "values_outside_plausibility_range_flagged_for_review": 0,
+  "b4_extreme_value_values_mutated": 0,
+  "b4_extreme_value_rows_removed": 0,
+  "b4_extreme_value_missingness_created": 0,
+  "b4_extreme_value_target_used": false,
+  "anthropometry_hb_missing_data_handling": {
+    "weight_before_pregnancy": "none -- NaN preserved; median imputation fitted training-fold-only in modeling",
+    "height": "none -- NaN preserved; median imputation fitted training-fold-only in modeling",
+    "BMI_before": "deterministic recompute from observed weight/height only (formula-exact); NaN preserved otherwise",
+    "Hb_before_delivery": "none -- NaN preserved; median imputation fitted training-fold-only in modeling"
+  },
+  "pet_categorical_conversion": {
+    "severe_PET_cat": "not imputed; categorical + not_documented (Decision 27); mechanism screen found significant association with AGE -- evidence against MCAR, compatible with MAR, not by itself proof of MNAR or that imputation is impossible",
+    "any_PET_cat": "not imputed; categorical + not_documented (Decision 27); mechanism screen found significant association with AGE -- evidence against MCAR, compatible with MAR, not by itself proof of MNAR or that imputation is impossible"
+  },
+  "diagnosis_year_family_status": "diagnosis_year is classified source_or_text_audit_exclude (a calendar-time-of-diagnosis field; not predictor-eligible). It is outside CLEANING_SCOPE and absent from this cleaned export entirely -- diagnosis_year__missing_ind is not created (its source is out of scope), and diagnosis_year_cat is not created. None of the three enter this or any downstream candidate/modeling pool.",
+  "execute_learned_imputation": false,
+  "execute_learned_imputation_meaning": "Retired flag, kept only for backward-compatible manifest schema; it has no operational effect. Data Cleaning B performs no learned imputation in any form. weight_before_pregnancy, height, and Hb_before_delivery are not imputed here (NaN preserved); BMI_before is deterministically recomputed only from observed weight+height. endometrioma_size_status/endometrioma_presence_laterality are not imputed (Section B5c). The adenomyosis multi-hot representation (adenomyosis_feature_1..11 + adenomyosis_features_unknown) is not imputed (Section B5f). severe_PET/any_PET are not imputed -- see pet_categorical_conversion above; diagnosis_year is not part of this cleaned export at all (see diagnosis_year_family_status). Any learned imputation belongs in the modeling pipeline, fitted only within each grouped (subject_number) training fold.",
+  "export_for_eda_c": true
+}

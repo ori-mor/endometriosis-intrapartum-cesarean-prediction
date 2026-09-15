@@ -1,0 +1,81 @@
+# ============================================================================
+# model_coentry_constraints.yaml
+# ============================================================================
+# CANONICAL, hand-reviewed SOURCE OF TRUTH for pairwise HARD, target-independent
+# co-entry constraints between model-facing variables. This YAML file is the
+# ONLY authoritative authored source. EDA C Section C13 reads it directly on a
+# fresh checkout -- no generator pre-step is required.
+#
+# Each pair is stored canonically (var_a < var_b, case-sensitive). Every row is
+# constraint_level: hard_forbid_coentry and target_independent: true. An
+# empirical p / q / effect / rho / Cramer's V / epsilon-squared value can NEVER
+# create a row here (reason_type must be a deterministic-containment kind).
+#
+# The run-specific snapshot exported to outputs/eda_c/model_coentry_constraints.csv
+# is a GENERATED modeling-handoff artifact derived from this file (plus a
+# run-computed earliest_applicable_stage column) -- not a second source of truth.
+# A local convenience CSV mirror under contracts/ may be regenerated with
+# _build_contract_csvs.py for inspection; it is gitignored and never read by C13.
+#
+# Verified against current executable source in the 2026-09-01 pre-C13 contract
+# freeze; migrated from the reviewed CSV to YAML during the 2026-09-01 Git
+# closure (content byte-preserved -- no pair/reason/rationale change).
+# ============================================================================
+
+hard_coentry_pairs:
+  - var_a: "PPROM"
+    var_b: "gestational_age_at_PPROM_days"
+    constraint_level: "hard_forbid_coentry"
+    reason_type: "deterministic_model_representation_gate"
+    target_independent: true
+    rationale: "MODEL-REPRESENTATION-DEPENDENT. The approved fold-safe model representation of gestational_age_at_PPROM_days (fold_safe_pprom_timing_categorical) has an explicit no_PPROM gate level (gate_col=PPROM, gate_value=1): rows with PPROM != 1 get 'no_PPROM'. With PPROM 0-missing this makes PPROM presence/absence deterministically encoded by the representation. The constraint applies to the MODEL REPRESENTATION, not to the raw continuous gestational_age_at_PPROM_days values (which are simply missing when PPROM == 0)."
+    decision_source: "Data Cleaning B Section B5b; outputs/data_cleaning/audit/cleaning_b_feature_dictionary.csv (PPROM row: 'no_PPROM already encodes PPROM==0/1 ... must never be SIMULTANEOUSLY selected together') + analysis/modeling/final_modeling/modeling_core.py _FOLD_SAFE_QUANTILE_SPECS['gestational_age_at_PPROM_days'] (gate_label='no_PPROM')."
+  - var_a: "derived_diabetes_type_grouped"
+    var_b: "diabetes_type"
+    constraint_level: "hard_forbid_coentry"
+    reason_type: "deterministic_coarsening"
+    target_independent: true
+    rationale: "derived_diabetes_type_grouped is a pure deterministic coarsening of diabetes_type's confirmed code dictionary ({0->no_diabetes, 1/2/3->pregestational, 4->GDMA1, 5->GDMA2}); it is a function of diabetes_type and adds no information unavailable from the original categorical representation."
+    decision_source: "Decision 78; analysis/eda/notebook_build/eda_c/eda_c_part3_feature_engineering.py C9 (_dt_map)."
+  - var_a: "derived_endo_surgery_adhesion_status"
+    var_b: "endometriosis_surgery"
+    constraint_level: "hard_forbid_coentry"
+    reason_type: "deterministic_status_encoding"
+    target_independent: true
+    rationale: "derived_endo_surgery_adhesion_status encodes the prior-surgery state exactly: no_prior_endo_surgery iff endometriosis_surgery == 0, both prior_surgery_* states iff endometriosis_surgery == 1. The status has 0 missing and construction fails loud on a genuinely missing applicable row, so endometriosis_surgery is fully recoverable from it."
+    decision_source: "Decision 91 Section B5g; outputs/data_cleaning/audit/cleaning_b_feature_dictionary.csv (derived_endo_surgery_adhesion_status rule)."
+  - var_a: "derived_prior_endo_surgery_procedure_status"
+    var_b: "endometriosis_surgery"
+    constraint_level: "hard_forbid_coentry"
+    reason_type: "deterministic_status_encoding"
+    target_independent: true
+    rationale: "derived_prior_endo_surgery_procedure_status encodes the prior-surgery state exactly: no_prior_endo_surgery iff endometriosis_surgery == 0, both prior_surgery_* states iff endometriosis_surgery == 1. The status has 0 missing in the current cohort, so endometriosis_surgery is fully recoverable from it (perfect one-hot collinearity on the no_prior_endo_surgery level)."
+    decision_source: "analysis/eda/notebook_build/eda_c/eda_c_part3_feature_engineering.py C9 (derived_prior_endo_surgery_procedure_status rule) + DERIVED_FEATURE_CONTRACTS."
+  - var_a: "endometrioma"
+    var_b: "endometrioma_presence_laterality"
+    constraint_level: "hard_forbid_coentry"
+    reason_type: "deterministic_status_encoding"
+    target_independent: true
+    rationale: "endometrioma_presence_laterality == 'none' iff endometrioma == 0; unilateral / bilateral / laterality_unknown iff endometrioma == 1. endometrioma has 0 missing and the laterality column has 0 missing, so endometrioma presence/absence is deterministically recoverable from it."
+    decision_source: "Data Cleaning B Section B5c; outputs/data_cleaning/audit/cleaning_b_feature_dictionary.csv (endometrioma_presence_laterality rule)."
+  - var_a: "endometrioma"
+    var_b: "endometrioma_size_status"
+    constraint_level: "hard_forbid_coentry"
+    reason_type: "deterministic_status_encoding"
+    target_independent: true
+    rationale: "endometrioma_size_status == 'no_endometrioma' iff endometrioma == 0; the other three states iff endometrioma == 1. endometrioma has 0 missing and the status column has 0 missing, so endometrioma presence/absence is deterministically recoverable from the status."
+    decision_source: "Data Cleaning B Section B5c; outputs/data_cleaning/audit/cleaning_b_feature_dictionary.csv (endometrioma_size_status rule)."
+  - var_a: "indication_for_induction_status"
+    var_b: "induction_any_bin"
+    constraint_level: "hard_forbid_coentry"
+    reason_type: "deterministic_status_encoding"
+    target_independent: true
+    rationale: "indication_for_induction_status is derived from induction_any_bin: no_induction iff induction_any_bin == 0, every other state iff induction_any_bin == 1. The Data Cleaning B feature dictionary states explicitly that induction_any_bin is reconstructable from this status (no_induction -> 0, else -> 1) and registers them as a redundancy pair not independently selectable."
+    decision_source: "Data Cleaning B Section B5h; outputs/data_cleaning/audit/cleaning_b_feature_dictionary.csv (indication_for_induction_status rule)."
+  - var_a: "mode_of_conception"
+    var_b: "mode_of_conception_ivf_vs_all"
+    constraint_level: "hard_forbid_coentry"
+    reason_type: "deterministic_recompute"
+    target_independent: true
+    rationale: "mode_of_conception_ivf_vs_all is deterministically recomputed from mode_of_conception (1 when mode_of_conception == 1, 0 for any other valid code, NaN for missing/invalid). It carries zero information not already in mode_of_conception, so the two must never be entered as independent predictors together."
+    decision_source: "Decision 30; analysis/preprocessing/run_preprocessing.py Batch 2 Step 0 (mode_of_conception_ivf_vs_all deterministic derivation)."

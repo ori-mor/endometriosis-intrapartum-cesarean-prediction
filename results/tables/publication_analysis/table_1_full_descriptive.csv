@@ -1,0 +1,132 @@
+Variable,Clinical Label,Stage,Overall,Vaginal delivery,Intrapartum CS,Missing n (%)
+AB,Prior abortions/miscarriages,1,0.0 [0.0–1.0],0.0 [0.0–1.0],0.0 [0.0–1.0],0 (0.0%)
+AGE,Maternal age,1,31.6 ± 4.8,31.3 ± 4.8,33.2 ± 4.8,0 (0.0%)
+BMI_before,Pre-pregnancy BMI,1,22.0 [19.7–25.8],22.0 [19.9–25.7],21.9 [19.6–25.9],114 (26.5%)
+CS,Number of prior cesarean sections,1,0.0 [0.0–0.0],0.0 [0.0–0.0],0.0 [0.0–0.0],0 (0.0%)
+EUP,History of ectopic pregnancy,1,17 (3.9%),16 (4.3%),1 (1.6%),0 (0.0%)
+Fetus_Anamoly,Fetal anomaly detected before delivery (current pregnancy),1,35 (8.1%),29 (7.8%),6 (9.8%),0 (0.0%)
+G,Gravidity (number of pregnancies),1,2.0 [1.0–3.0],2.0 [1.0–3.0],1.0 [1.0–2.0],0 (0.0%)
+IUGR,Intrauterine growth restriction (IUGR),1,18 (4.2%),15 (4.1%),3 (4.9%),0 (0.0%)
+LIVE_BIRTH,Number of prior live births,1,0.0 [0.0–1.0],0.0 [0.0–1.0],0.0 [0.0–0.0],0 (0.0%)
+P,Parity (number of previous deliveries),1,0.0 [0.0–1.0],0.0 [0.0–1.0],0.0 [0.0–0.0],0 (0.0%)
+PIH,"Gestational hypertension (PIH), without proteinuria",1,10 (2.3%),7 (1.9%),3 (4.9%),0 (0.0%)
+SIPET,Superimposed preeclampsia (chronic hypertension with new-onset preeclampsia),1,1 (0.2%),1 (0.3%),0 (0.0%),0 (0.0%)
+S_P_CS,Status post previous cesarean section,1,18 (4.2%),14 (3.8%),4 (6.6%),0 (0.0%)
+VBAC,Vaginal birth after cesarean (VBAC),1,2 (0.5%),2 (0.5%),0 (0.0%),0 (0.0%)
+adenomyosis,Adenomyosis (presence),1,169 (39.2%),143 (38.6%),26 (42.6%),0 (0.0%)
+adenomyosis_feature_1,Adenomyosis sonographic finding: globular uterine configuration,1,69 (16.0%),59 (15.9%),10 (16.4%),0 (0.0%)
+adenomyosis_feature_10,Adenomyosis sonographic finding: ill-defined endometrial-myometrial border,1,10 (2.3%),9 (2.4%),1 (1.6%),0 (0.0%)
+adenomyosis_feature_11,Adenomyosis sonographic finding: diffuse myometrial vascularity (non-specific finding per source documentation),1,1 (0.2%),0 (0.0%),1 (1.6%),0 (0.0%)
+adenomyosis_feature_2,"Adenomyosis sonographic finding: ""question-mark""-shaped uterine contour",1,6 (1.4%),5 (1.4%),1 (1.6%),0 (0.0%)
+adenomyosis_feature_3,Adenomyosis sonographic finding: myometrial wall asymmetry,1,46 (10.7%),39 (10.5%),7 (11.5%),0 (0.0%)
+adenomyosis_feature_4,Adenomyosis sonographic finding: echogenic myometrial islands / increased echogenicity,1,39 (9.0%),37 (10.0%),2 (3.3%),0 (0.0%)
+adenomyosis_feature_5,Adenomyosis sonographic finding: myometrial cysts,1,22 (5.1%),21 (5.7%),1 (1.6%),0 (0.0%)
+adenomyosis_feature_6,Adenomyosis sonographic finding: junctional zone irregularity,1,4 (0.9%),4 (1.1%),0 (0.0%),0 (0.0%)
+adenomyosis_feature_7,Adenomyosis sonographic finding: junctional zone thickening,1,1 (0.2%),0 (0.0%),1 (1.6%),0 (0.0%)
+adenomyosis_feature_8,Adenomyosis sonographic finding: echogenic subendometrial buds (junctional zone),1,1 (0.2%),1 (0.3%),0 (0.0%),0 (0.0%)
+adenomyosis_feature_9,Adenomyosis sonographic finding: fan-shaped shadowing,1,4 (0.9%),3 (0.8%),1 (1.6%),0 (0.0%)
+adenomyosis_features_unknown,Adenomyosis sonographic finding: unspecified/not documented,1,39 (9.0%),33 (8.9%),6 (9.8%),0 (0.0%)
+any_PET_cat: absent,Any pre-eclampsia,1,406 (94.2%),350 (94.6%),56 (91.8%),0 (0.0%)
+any_PET_cat: present,Any pre-eclampsia,1,10 (2.3%),6 (1.6%),4 (6.6%),
+any_PET_cat: not_documented,Any pre-eclampsia,1,15 (3.5%),14 (3.8%),1 (1.6%),
+aspirin_during_pregnancy,Aspirin treatment during pregnancy,1,32 (7.4%),25 (6.8%),7 (11.5%),0 (0.0%)
+bladder_lesion_resected,Bladder endometriosis lesion resected,1,16 (3.7%),13 (3.5%),3 (4.9%),0 (0.0%)
+bowel_lesion_resected,Bowel endometriosis lesion resected,1,37 (8.6%),31 (8.4%),6 (9.8%),0 (0.0%)
+celestone,Antenatal corticosteroids (Celestone),1,35 (8.1%),28 (7.6%),7 (11.5%),0 (0.0%)
+clexane_during_pregnancy,Clexane (low-molecular-weight heparin) treatment during pregnancy,1,16 (3.7%),14 (3.8%),2 (3.3%),0 (0.0%)
+cs_scar_endometriosis,Endometriosis in prior cesarean-section scar,1,12 (2.8%),7 (1.9%),5 (8.2%),0 (0.0%)
+deep_endometriosis,Deep infiltrating endometriosis phenotype,1,152 (35.3%),131 (35.4%),21 (34.4%),0 (0.0%)
+derived_diabetes_type_grouped: no_diabetes,Diabetes type (grouped: pregestational vs. gestational),1,366 (84.9%),320 (86.5%),46 (75.4%),0 (0.0%)
+derived_diabetes_type_grouped: pregestational,Diabetes type (grouped: pregestational vs. gestational),1,8 (1.9%),8 (2.2%),0 (0.0%),
+derived_diabetes_type_grouped: GDMA1,Diabetes type (grouped: pregestational vs. gestational),1,39 (9.0%),32 (8.6%),7 (11.5%),
+derived_diabetes_type_grouped: GDMA2,Diabetes type (grouped: pregestational vs. gestational),1,18 (4.2%),10 (2.7%),8 (13.1%),
+derived_endo_surgery_adhesion_status: no_prior_endo_surgery,Documented adhesion status at prior endometriosis surgery,1,209 (48.5%),178 (48.1%),31 (50.8%),0 (0.0%)
+derived_endo_surgery_adhesion_status: prior_surgery_without_documented_adhesions,Documented adhesion status at prior endometriosis surgery,1,86 (20.0%),73 (19.7%),13 (21.3%),
+derived_endo_surgery_adhesion_status: prior_surgery_with_documented_adhesions,Documented adhesion status at prior endometriosis surgery,1,136 (31.6%),119 (32.2%),17 (27.9%),
+derived_hypertension_pih_pet_spectrum: no_hypertensive_disorder,Hypertensive disease spectrum (PIH/PET),1,397 (95.4%),344 (96.6%),53 (88.3%),15 (3.5%)
+derived_hypertension_pih_pet_spectrum: pih_gestational_htn,Hypertensive disease spectrum (PIH/PET),1,8 (1.9%),5 (1.4%),3 (5.0%),
+derived_hypertension_pih_pet_spectrum: preeclampsia_spectrum,Hypertensive disease spectrum (PIH/PET),1,11 (2.6%),7 (2.0%),4 (6.7%),
+derived_placental_dysfunction_proxy,Placenta-mediated complication proxy (pre-eclampsia or IUGR present),1,28 (6.7%),21 (5.9%),7 (11.7%),15 (3.5%)
+derived_prior_endo_surgery_procedure_status: no_prior_endo_surgery,Documented procedure status at prior endometriosis surgery,1,209 (48.5%),178 (48.1%),31 (50.8%),0 (0.0%)
+derived_prior_endo_surgery_procedure_status: prior_surgery_no_selected_procedure_documented,Documented procedure status at prior endometriosis surgery,1,13 (3.0%),8 (2.2%),5 (8.2%),
+derived_prior_endo_surgery_procedure_status: prior_surgery_with_selected_procedure_documented,Documented procedure status at prior endometriosis surgery,1,209 (48.5%),184 (49.7%),25 (41.0%),
+diabetes_type: diabetes_type_1,Diabetes type (raw source coding),1,2 (0.5%),2 (0.5%),0 (0.0%),0 (0.0%)
+diabetes_type: diabetes_type_2,Diabetes type (raw source coding),1,4 (0.9%),4 (1.1%),0 (0.0%),
+diabetes_type: GDMA1,Diabetes type (raw source coding),1,39 (9.0%),32 (8.6%),7 (11.5%),
+diabetes_type: GDMA2,Diabetes type (raw source coding),1,18 (4.2%),10 (2.7%),8 (13.1%),
+diabetes_type: no_diabetes,Diabetes type (raw source coding),1,366 (84.9%),320 (86.5%),46 (75.4%),
+diabetes_type: pregestational_diabetes,Diabetes type (raw source coding),1,2 (0.5%),2 (0.5%),0 (0.0%),
+endo_resection_adhesiolysis,Adhesiolysis performed at prior endometriosis surgery,1,145 (33.6%),127 (34.3%),18 (29.5%),0 (0.0%)
+endo_resection_adnexa,Adnexal endometriosis lesion resected,1,11 (2.6%),10 (2.7%),1 (1.6%),0 (0.0%)
+endo_resection_appendix,Appendiceal endometriosis lesion resected,1,4 (0.9%),3 (0.8%),1 (1.6%),0 (0.0%)
+endo_resection_epiploica,Epiploic-appendage endometriosis lesion resected,1,1 (0.2%),1 (0.3%),0 (0.0%),0 (0.0%)
+endo_resection_fallopian_tube,Fallopian tube endometriosis lesion resected,1,27 (6.3%),25 (6.8%),2 (3.3%),0 (0.0%)
+endo_resection_lesion,Other endometriosis lesion resected (unspecified site),1,174 (40.4%),153 (41.4%),21 (34.4%),0 (0.0%)
+endo_resection_no_resection,No endometriosis lesion resected,1,7 (1.6%),4 (1.1%),3 (4.9%),0 (0.0%)
+endo_resection_ovarian_endometrioma_bilateral,Bilateral ovarian endometrioma resected,1,27 (6.3%),25 (6.8%),2 (3.3%),0 (0.0%)
+endo_resection_ovarian_endometrioma_unilateral,Unilateral ovarian endometrioma resected,1,83 (19.3%),72 (19.5%),11 (18.0%),0 (0.0%)
+endo_resection_uterus,Uterine endometriosis lesion resected,1,9 (2.1%),9 (2.4%),0 (0.0%),0 (0.0%)
+endometrioma,Endometrioma present,1,193 (44.8%),168 (45.4%),25 (41.0%),0 (0.0%)
+endometrioma_presence_laterality: none,Endometrioma laterality,1,238 (55.2%),202 (54.6%),36 (59.0%),0 (0.0%)
+endometrioma_presence_laterality: unilateral,Endometrioma laterality,1,125 (29.0%),111 (30.0%),14 (23.0%),
+endometrioma_presence_laterality: bilateral,Endometrioma laterality,1,63 (14.6%),52 (14.1%),11 (18.0%),
+endometrioma_presence_laterality: laterality_unknown,Endometrioma laterality,1,5 (1.2%),5 (1.4%),0 (0.0%),
+endometrioma_size_status: no_endometrioma,Endometrioma size category,1,238 (55.2%),202 (54.6%),36 (59.0%),0 (0.0%)
+endometrioma_size_status: endometrioma_less_than_30mm,Endometrioma size category,1,67 (15.5%),62 (16.8%),5 (8.2%),
+endometrioma_size_status: endometrioma_30mm_or_more,Endometrioma size category,1,104 (24.1%),88 (23.8%),16 (26.2%),
+endometrioma_size_status: endometrioma_size_unknown,Endometrioma size category,1,22 (5.1%),18 (4.9%),4 (6.6%),
+endometriosis_surgery,Prior endometriosis surgery,1,222 (51.5%),192 (51.9%),30 (49.2%),0 (0.0%)
+gestational_diabetes,Gestational diabetes,1,64 (14.8%),49 (13.2%),15 (24.6%),0 (0.0%)
+height,Height,1,163.2 ± 6.8,163.6 ± 6.8,161.1 ± 6.8,68 (15.8%)
+magnesium,Magnesium sulfate administration (neuroprotection),1,8 (1.9%),5 (1.4%),3 (4.9%),0 (0.0%)
+mild_PET,Mild preeclampsia,1,8 (1.9%),5 (1.4%),3 (4.9%),0 (0.0%)
+mode_of_conception: spontaneous,Mode of conception,1,293 (68.0%),259 (70.0%),34 (55.7%),0 (0.0%)
+mode_of_conception: IUI,Mode of conception,1,9 (2.1%),5 (1.4%),4 (6.6%),
+mode_of_conception: IVF,Mode of conception,1,125 (29.0%),103 (27.8%),22 (36.1%),
+mode_of_conception: other_fertility_treatment,Mode of conception,1,4 (0.9%),3 (0.8%),1 (1.6%),
+mode_of_conception_ivf_vs_all,Conception via IVF (vs. all other modes),1,125 (29.0%),103 (27.8%),22 (36.1%),0 (0.0%)
+nulliparity,Nulliparity,1,237 (55.0%),186 (50.3%),51 (83.6%),0 (0.0%)
+oligohydramnios,Oligohydramnios,1,23 (5.3%),17 (4.6%),6 (9.8%),0 (0.0%)
+peritoneal_endometriosis,Peritoneal endometriosis phenotype,1,299 (69.4%),257 (69.5%),42 (68.9%),0 (0.0%)
+polyhydramnios,Polyhydramnios (excess amniotic fluid),1,18 (4.2%),13 (3.5%),5 (8.2%),0 (0.0%)
+pregnancy_related_hypertensive_disorder,Pregnancy-related hypertensive disorder (any),1,19 (4.4%),12 (3.2%),7 (11.5%),0 (0.0%)
+severe_PET_cat: absent,Severe pre-eclampsia,1,414 (96.1%),355 (95.9%),59 (96.7%),0 (0.0%)
+severe_PET_cat: present,Severe pre-eclampsia,1,2 (0.5%),1 (0.3%),1 (1.6%),
+severe_PET_cat: not_documented,Severe pre-eclampsia,1,15 (3.5%),14 (3.8%),1 (1.6%),
+smoking: non_smoker,Smoking status,1,392 (91.0%),339 (91.6%),53 (86.9%),0 (0.0%)
+smoking: former_smoker,Smoking status,1,1 (0.2%),1 (0.3%),0 (0.0%),
+smoking: current_smoker,Smoking status,1,38 (8.8%),30 (8.1%),8 (13.1%),
+vaginal_opening_during_surgery,Vaginal opening performed during endometriosis surgery,1,24 (5.6%),19 (5.1%),5 (8.2%),0 (0.0%)
+weight_before_pregnancy,Weight before pregnancy,1,60.0 [52.0–69.0],60.0 [52.0–68.0],58.5 [50.2–72.5],89 (20.6%)
+BMI_after,BMI near delivery,2,28.0 ± 4.3,28.0 ± 4.2,28.1 ± 4.5,247 (57.3%)
+Hb_before_delivery,Hemoglobin before delivery,2,12.1 ± 1.1,12.0 ± 1.0,12.2 ± 1.2,39 (9.0%)
+PPROM,Preterm prelabor rupture of membranes (PPROM),2,17 (3.9%),11 (3.0%),6 (9.8%),0 (0.0%)
+gestational_age_at_PPROM_days,Gestational age at PPROM (days),2,248.0 [237.0–256.0],248.0 [239.8–255.8],247.0 [235.0–257.5],415 (96.3%)
+placental_abruption,Placental abruption,2,4 (0.9%),2 (0.5%),2 (3.3%),0 (0.0%)
+weight_in_pregnancy,Weight in pregnancy,2,75.5 ± 12.6,75.5 ± 12.4,76.1 ± 14.5,244 (56.6%)
+gestational_age_at_delivery_days,Gestational age at delivery (days),3,275.0 [267.0–281.0],275.0 [268.0–281.0],272.0 [264.0–281.0],0 (0.0%)
+indication_for_induction_status: 1,Indication for labor induction,3,4 (0.9%),3 (0.8%),1 (1.6%),0 (0.0%)
+indication_for_induction_status: 10,Indication for labor induction,3,36 (8.4%),30 (8.1%),6 (9.8%),
+indication_for_induction_status: 2,Indication for labor induction,3,6 (1.4%),4 (1.1%),2 (3.3%),
+"indication_for_induction_status: 2,3,5",Indication for labor induction,3,1 (0.2%),0 (0.0%),1 (1.6%),
+"indication_for_induction_status: 2,7",Indication for labor induction,3,1 (0.2%),1 (0.3%),0 (0.0%),
+indication_for_induction_status: 3,Indication for labor induction,3,19 (4.4%),14 (3.8%),5 (8.2%),
+"indication_for_induction_status: 3,4",Indication for labor induction,3,2 (0.5%),1 (0.3%),1 (1.6%),
+"indication_for_induction_status: 3,5",Indication for labor induction,3,1 (0.2%),1 (0.3%),0 (0.0%),
+"indication_for_induction_status: 3,6",Indication for labor induction,3,1 (0.2%),0 (0.0%),1 (1.6%),
+"indication_for_induction_status: 3,8",Indication for labor induction,3,1 (0.2%),1 (0.3%),0 (0.0%),
+indication_for_induction_status: 4,Indication for labor induction,3,22 (5.1%),17 (4.6%),5 (8.2%),
+"indication_for_induction_status: 4,6",Indication for labor induction,3,2 (0.5%),2 (0.5%),0 (0.0%),
+"indication_for_induction_status: 4,6,10",Indication for labor induction,3,1 (0.2%),1 (0.3%),0 (0.0%),
+"indication_for_induction_status: 4,8",Indication for labor induction,3,2 (0.5%),2 (0.5%),0 (0.0%),
+"indication_for_induction_status: 4,9",Indication for labor induction,3,2 (0.5%),1 (0.3%),1 (1.6%),
+indication_for_induction_status: 5,Indication for labor induction,3,13 (3.0%),10 (2.7%),3 (4.9%),
+indication_for_induction_status: 6,Indication for labor induction,3,24 (5.6%),19 (5.1%),5 (8.2%),
+indication_for_induction_status: 7,Indication for labor induction,3,32 (7.4%),25 (6.8%),7 (11.5%),
+indication_for_induction_status: 8,Indication for labor induction,3,10 (2.3%),5 (1.4%),5 (8.2%),
+indication_for_induction_status: 9,Indication for labor induction,3,10 (2.3%),8 (2.2%),2 (3.3%),
+indication_for_induction_status: no_induction,Indication for labor induction,3,237 (55.0%),223 (60.3%),14 (23.0%),
+indication_for_induction_status: induction_indication_unknown,Indication for labor induction,3,4 (0.9%),2 (0.5%),2 (3.3%),
+induction_any_bin,Labor induction (any),3,194 (45.0%),147 (39.7%),47 (77.0%),0 (0.0%)
+intrapartum_fever_or_chorioamnionitis_bin,Intrapartum fever or chorioamnionitis,3,29 (6.7%),21 (5.7%),8 (13.1%),0 (0.0%)
+meconium_stained_amniotic_fluid,Meconium-stained amniotic fluid,3,56 (13.0%),50 (13.5%),6 (9.8%),0 (0.0%)

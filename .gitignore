@@ -1,0 +1,49 @@
+# Submission-repository .gitignore — narrow, intentional.
+#
+# This is a NEW spec written for this curated submission package. It is
+# NOT copied from the canonical research repository's broad .gitignore
+# (which blocks .csv/.xlsx/.ipynb by extension everywhere — inappropriate
+# here, since this package's approved aggregate .csv/.xlsx and all 6
+# executed .ipynb notebooks are exactly what must be tracked).
+#
+# Nothing here ignores by extension globally. Everything ignored below is
+# either local/runtime/development noise, or a specific future path where
+# patient-level or generated data must never be added.
+
+# --- Local Python environments ---------------------------------------------
+.venv/
+.venv*/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# --- Notebook runtime checkpoints -------------------------------------------
+.ipynb_checkpoints/
+
+# --- OS / editor noise -------------------------------------------------------
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# --- Secrets / local temp files ----------------------------------------------
+.env
+*.pem
+*.key
+*.tmp
+*.temp
+*.bak
+*~
+
+# --- Never allow raw/private patient data to be added later -----------------
+data/raw/
+data/processed/
+data/controlled/
+data/private/
+data/patient_level/
+
+# --- Runtime/generated patient-level outputs must never enter this repository
+outputs/
+preds/
+oof_predictions/

@@ -1,0 +1,83 @@
+# Submission-wide dependency specification (supervisor-facing).
+#
+# Scope: every direct third-party import found across all included `src/`
+# `.py` files and all six notebook code cells (checked by AST-parsing each
+# file/cell, not by guessing from typical stacks). Versions below are
+# VERIFIED installed versions read directly from the actual final project
+# virtual environment (`.venv312`, Python 3.12.10) on the analysis machine
+# via `pip list` -- the same environment that produced this submission's
+# already-executed notebook outputs (confirmed by a sanitized
+# `<PROJECT_ROOT>\.venv312\...` path fragment surviving in one executed
+# cell's warning text in notebooks/04_modeling_handoff.ipynb). No version
+# below was guessed or copied from an unverified source.
+#
+# This file is the FULL submission-wide spec. It supersedes nothing: the
+# existing stage-specific lock at
+# documentation/environment/data-cleaning-b-py31210-lock.txt remains in
+# place as stage-specific provenance for Data Cleaning B alone (a fully
+# resolved, transitive pip-freeze snapshot -- this file lists only direct
+# imports project-wide).
+#
+# Known discrepancy, disclosed rather than silently resolved: the pinned
+# versions inside that included Data-Cleaning-B lock file (pandas==3.0.3,
+# numpy==2.5.1, scipy==1.18.0, matplotlib==3.11.1) do NOT match the versions
+# actually installed in `.venv312` right now (pandas 2.3.3, numpy 2.3.5,
+# scipy 1.16.3, matplotlib 3.10.0 -- used below). The live environment is
+# also exactly consistent with the canonical repository's own
+# `docs/finalization/ENVIRONMENT_FREEZE.md` (2026-09-03 snapshot) and with
+# the notebook execution evidence above, so this file follows the verified
+# live environment. This mismatch could not be resolved from this machine
+# alone (it would require canonical-repository history not copied into this
+# submission) and is reported here rather than guessed away.
+
+# --- Core scientific stack -------------------------------------------------
+# Used throughout src/ (preprocessing utilities, EDA/data-cleaning notebook
+# builders, final modeling, publication analysis) and in all six notebooks.
+numpy==2.3.5
+pandas==2.3.3
+scipy==1.16.3
+scikit-learn==1.9.0
+statsmodels==0.14.6
+patsy==1.0.2
+matplotlib==3.10.0
+seaborn==0.13.2
+openpyxl==3.1.5
+PyYAML==6.0.3
+joblib==1.5.3
+IPython==9.15.0
+
+# --- Optional notebook-profiling packages ----------------------------------
+# Genuinely used and executed inside the included notebooks (not just
+# referenced in builder source): ydata-profiling runs in
+# notebooks/04_modeling_handoff.ipynb (Section C7b-adjacent EDA profiling);
+# sweetviz generates the three cumulative-stage HTML reports referenced in
+# the same notebook's executed Section C7b output. Both are guarded imports
+# in the source (no silent substitution if absent) -- they are not required
+# to READ the already-executed notebooks. Installing them is NOT sufficient
+# to re-run those specific profiling cells from scratch: those cells also
+# require the patient-level analytical dataset as input, which is
+# deliberately excluded from this submission (see the root README.md,
+# reproducibility tier 5) -- these two packages are listed for completeness
+# of the direct-import inventory, not as a claim that the profiling cells
+# are rerunnable from this package.
+ydata-profiling==4.18.4
+sweetviz==2.3.3
+
+# --- Notebook build / execution tooling ------------------------------------
+# Needed to open/re-execute any notebook, and specifically to re-run
+# src/notebook_build/final_compact_ridge_presentation/
+# build_compact_ridge_presentation_notebook.py, which regenerates
+# notebooks/05_final_compact_ridge_model.ipynb from its part files and was
+# used to produce the copy included in this submission.
+ipykernel==7.3.0
+jupyter_client==8.9.1
+nbformat==5.10.4
+nbclient==0.11.0
+nbconvert==7.17.1
+
+# --- Explicitly NOT required ------------------------------------------------
+# google.colab: referenced only inside guarded, Colab-specific upload
+# branches of the EDA A / A2 notebook-build source (src/eda/notebook_build/).
+# These branches never executed for the included notebooks (all six were
+# executed locally, not on Colab) and google.colab is not installable
+# outside the Colab runtime itself -- it is not a pip requirement here.

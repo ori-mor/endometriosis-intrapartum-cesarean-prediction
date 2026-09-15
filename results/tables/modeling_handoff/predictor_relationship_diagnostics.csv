@@ -1,0 +1,76 @@
+var_a,var_b,relationship_kind,strength_measure,strength,representation_classification,high_association
+endometrioma,endometrioma_presence_laterality,categorical-categorical,cramers_v,1.0,exact/superseded or direct-lineage representation (one is derived in B from the other),True
+mode_of_conception,mode_of_conception_ivf_vs_all,categorical-categorical,cramers_v,1.0,deterministic re-expression (ivf_vs_all == 1 iff mode_of_conception == 1) -- HARD target-independent co-entry pair in the C13 YAML contract; the two must never enter a model together,True
+endometrioma,endometrioma_size_status,categorical-categorical,cramers_v,1.0,exact/superseded or direct-lineage representation (one is derived in B from the other),True
+endometriosis_surgery,derived_prior_endo_surgery_procedure_status,categorical-categorical,cramers_v,1.0,"clinically overlapping (prior endo surgery) -- redundancy disclosed, both retained",True
+endometriosis_surgery,derived_endo_surgery_adhesion_status,categorical-categorical,cramers_v,1.0,exact/superseded or direct-lineage representation (one is derived in B from the other),True
+diabetes_type,derived_diabetes_type_grouped,categorical-categorical,cramers_v,1.0,"clinically overlapping (diabetes) -- redundancy disclosed, both retained",True
+induction_any_bin,indication_for_induction_status,categorical-categorical,cramers_v,1.0,exact/superseded or direct-lineage representation (one is derived in B from the other),True
+SIPET,indication_for_induction_status,categorical-categorical,cramers_v,1.0,clinically distinct but correlated -- retain both; NOT a duplicate,True
+gestational_diabetes,diabetes_type,categorical-categorical,cramers_v,0.995,"clinically overlapping (diabetes) -- redundancy disclosed, both retained",True
+gestational_diabetes,derived_diabetes_type_grouped,categorical-categorical,cramers_v,0.992,"clinically overlapping (diabetes) -- redundancy disclosed, both retained",True
+pregnancy_related_hypertensive_disorder,derived_hypertension_pih_pet_spectrum,categorical-categorical,cramers_v,0.973,"clinically overlapping (hypertension spectrum) -- redundancy disclosed, both retained",True
+any_PET_cat,derived_hypertension_pih_pet_spectrum,categorical-categorical,cramers_v,0.952,"clinically overlapping (hypertension spectrum) -- redundancy disclosed, both retained",True
+PIH,derived_hypertension_pih_pet_spectrum,categorical-categorical,cramers_v,0.947,"clinically overlapping (hypertension spectrum) -- redundancy disclosed, both retained",True
+mild_PET,any_PET_cat,categorical-categorical,cramers_v,0.892,"clinically overlapping (hypertension spectrum) -- redundancy disclosed, both retained",True
+mild_PET,derived_hypertension_pih_pet_spectrum,categorical-categorical,cramers_v,0.85,"clinically overlapping (hypertension spectrum) -- redundancy disclosed, both retained",True
+endo_resection_adhesiolysis,derived_endo_surgery_adhesion_status,categorical-categorical,cramers_v,0.849,clinically distinct but correlated -- retain both; NOT a duplicate,True
+endo_resection_lesion,derived_prior_endo_surgery_procedure_status,categorical-categorical,cramers_v,0.848,clinically distinct but correlated -- retain both; NOT a duplicate,True
+endo_resection_lesion,derived_endo_surgery_adhesion_status,categorical-categorical,cramers_v,0.806,clinically distinct but correlated -- retain both; NOT a duplicate,True
+endometriosis_surgery,endo_resection_lesion,categorical-categorical,cramers_v,0.798,clinically distinct but correlated -- retain both; NOT a duplicate,True
+oligohydramnios,indication_for_induction_status,categorical-categorical,cramers_v,0.795,clinically distinct but correlated -- retain both; NOT a duplicate,True
+IUGR,derived_placental_dysfunction_proxy,categorical-categorical,cramers_v,0.792,clinically distinct but correlated -- retain both; NOT a duplicate,True
+any_PET_cat,severe_PET_cat,categorical-categorical,cramers_v,0.773,"clinically overlapping (hypertension spectrum) -- redundancy disclosed, both retained",True
+IUGR,indication_for_induction_status,categorical-categorical,cramers_v,0.744,clinically distinct but correlated -- retain both; NOT a duplicate,True
+endo_resection_adhesiolysis,derived_prior_endo_surgery_procedure_status,categorical-categorical,cramers_v,0.734,clinically distinct but correlated -- retain both; NOT a duplicate,True
+endo_resection_no_resection,derived_prior_endo_surgery_procedure_status,categorical-categorical,cramers_v,0.729,clinically distinct but correlated -- retain both; NOT a duplicate,True
+derived_endo_surgery_adhesion_status,derived_prior_endo_surgery_procedure_status,categorical-categorical,cramers_v,0.726,"clinically overlapping (prior endo surgery) -- redundancy disclosed, both retained",True
+pregnancy_related_hypertensive_disorder,any_PET_cat,categorical-categorical,cramers_v,0.719,"clinically overlapping (hypertension spectrum) -- redundancy disclosed, both retained",True
+pregnancy_related_hypertensive_disorder,PIH,categorical-categorical,cramers_v,0.718,"clinically overlapping (hypertension spectrum) -- redundancy disclosed, both retained",True
+indication_for_induction_status,derived_placental_dysfunction_proxy,categorical-categorical,cramers_v,0.71,clinically distinct but correlated -- retain both; NOT a duplicate,True
+endometriosis_surgery,endo_resection_adhesiolysis,categorical-categorical,cramers_v,0.691,clinically distinct but correlated -- retain both; NOT a duplicate,True
+pregnancy_related_hypertensive_disorder,indication_for_induction_status,categorical-categorical,cramers_v,0.667,clinically distinct but correlated -- retain both; NOT a duplicate,True
+endo_resection_lesion,endo_resection_adhesiolysis,categorical-categorical,cramers_v,0.665,clinically distinct but correlated -- retain both; NOT a duplicate,True
+vaginal_opening_during_surgery,bowel_lesion_resected,categorical-categorical,cramers_v,0.648,clinically distinct but correlated -- retain both; NOT a duplicate,True
+pregnancy_related_hypertensive_disorder,mild_PET,categorical-categorical,cramers_v,0.64,"clinically overlapping (hypertension spectrum) -- redundancy disclosed, both retained",True
+gestational_diabetes,indication_for_induction_status,categorical-categorical,cramers_v,0.614,clinically distinct but correlated -- retain both; NOT a duplicate,True
+mild_PET,indication_for_induction_status,categorical-categorical,cramers_v,0.611,clinically distinct but correlated -- retain both; NOT a duplicate,True
+endometrioma_presence_laterality,endometrioma_size_status,categorical-categorical,cramers_v,0.6,"clinically overlapping (endometriosis phenotype) -- redundancy disclosed, both retained",True
+any_PET_cat,derived_placental_dysfunction_proxy,categorical-categorical,cramers_v,0.584,clinically distinct but correlated -- retain both; NOT a duplicate,True
+clexane_during_pregnancy,indication_for_induction_status,categorical-categorical,cramers_v,0.568,clinically distinct but correlated -- retain both; NOT a duplicate,True
+derived_placental_dysfunction_proxy,derived_hypertension_pih_pet_spectrum,categorical-categorical,cramers_v,0.554,clinically distinct but correlated -- retain both; NOT a duplicate,True
+diabetes_type,indication_for_induction_status,categorical-categorical,cramers_v,0.548,clinically distinct but correlated -- retain both; NOT a duplicate,True
+adenomyosis,adenomyosis_feature_1,categorical-categorical,cramers_v,0.544,exact/superseded or direct-lineage representation (one is derived in B from the other),True
+endo_resection_ovarian_endometrioma_unilateral,endometrioma_presence_laterality,categorical-categorical,cramers_v,0.543,clinically distinct but correlated -- retain both; NOT a duplicate,True
+endo_resection_ovarian_endometrioma_unilateral,endometrioma_size_status,categorical-categorical,cramers_v,0.535,clinically distinct but correlated -- retain both; NOT a duplicate,True
+indication_for_induction_status,derived_hypertension_pih_pet_spectrum,categorical-categorical,cramers_v,0.531,clinically distinct but correlated -- retain both; NOT a duplicate,True
+adenomyosis_feature_10,adenomyosis_feature_5,categorical-categorical,cramers_v,0.524,clinically distinct but correlated -- retain both; NOT a duplicate,True
+mild_PET,derived_placental_dysfunction_proxy,categorical-categorical,cramers_v,0.521,clinically distinct but correlated -- retain both; NOT a duplicate,True
+any_PET_cat,indication_for_induction_status,categorical-categorical,cramers_v,0.51,clinically distinct but correlated -- retain both; NOT a duplicate,True
+endo_resection_ovarian_endometrioma_unilateral,derived_prior_endo_surgery_procedure_status,categorical-categorical,cramers_v,0.503,clinically distinct but correlated -- retain both; NOT a duplicate,True
+CS,S_P_CS,numeric-categorical,epsilon_squared,1.0,"deterministic re-expression at the binary level (S_P_CS == 1 iff CS > 0) -- review-only relationship group, not a hard co-entry pair; CS also carries the prior-CS count, clinically distinct for TOLAC risk",True
+P,nulliparity,numeric-categorical,epsilon_squared,0.916,"deterministic derivation (nulliparity == 1 iff P == 0; nulliparity is recomputed upstream directly from the authoritative parity count P) -- review-only relationship group (parity_obstetric_history), NOT a hard co-entry pair: nulliparity is a NONLINEAR basis function of P, so P (count) and I(P == 0) (threshold) can jointly enter a model; joint entry is a modeling-review / coefficient-stability matter, not a global ban. P also carries the full parity count",True
+LIVE_BIRTH,nulliparity,numeric-categorical,epsilon_squared,0.835,"clinically overlapping (parity / obstetric history) -- redundancy disclosed, both retained",True
+gestational_age_at_PPROM_days,celestone,numeric-categorical,epsilon_squared,0.696,clinically distinct but correlated -- retain both; NOT a duplicate,True
+G,nulliparity,numeric-categorical,epsilon_squared,0.522,"clinically overlapping (parity / obstetric history) -- redundancy disclosed, both retained",True
+gestational_age_at_PPROM_days,magnesium,numeric-categorical,epsilon_squared,0.427,clinically distinct but correlated -- retain both; NOT a duplicate,True
+gestational_age_at_delivery_days,indication_for_induction_status,numeric-categorical,epsilon_squared,0.147,clinically distinct but correlated -- retain both; NOT a duplicate,True
+weight_before_pregnancy,indication_for_induction_status,numeric-categorical,epsilon_squared,0.113,clinically distinct but correlated -- retain both; NOT a duplicate,True
+gestational_age_at_delivery_days,PPROM,numeric-categorical,epsilon_squared,0.108,clinically distinct but correlated -- retain both; NOT a duplicate,True
+gestational_age_at_delivery_days,celestone,numeric-categorical,epsilon_squared,0.105,clinically distinct but correlated -- retain both; NOT a duplicate,True
+BMI_before,indication_for_induction_status,numeric-categorical,epsilon_squared,0.101,clinically distinct but correlated -- retain both; NOT a duplicate,True
+gestational_age_at_delivery_days,gestational_age_at_PPROM_days,numeric-numeric,spearman_rho,0.993,clinically distinct but correlated -- retain both; NOT a duplicate,True
+P,LIVE_BIRTH,numeric-numeric,spearman_rho,0.962,"clinically overlapping (parity / obstetric history) -- redundancy disclosed, both retained",True
+weight_before_pregnancy,BMI_before,numeric-numeric,spearman_rho,0.908,index vs component (BMI_before = weight/(height/100)^2),True
+weight_before_pregnancy,weight_in_pregnancy,numeric-numeric,spearman_rho,0.883,clinically distinct but correlated -- retain both; NOT a duplicate,True
+BMI_before,BMI_after,numeric-numeric,spearman_rho,0.859,clinically distinct but correlated -- retain both; NOT a duplicate,True
+weight_in_pregnancy,BMI_after,numeric-numeric,spearman_rho,0.858,clinically distinct but correlated -- retain both; NOT a duplicate,True
+G,P,numeric-numeric,spearman_rho,0.778,"clinically overlapping (parity / obstetric history) -- redundancy disclosed, both retained",True
+weight_before_pregnancy,BMI_after,numeric-numeric,spearman_rho,0.764,clinically distinct but correlated -- retain both; NOT a duplicate,True
+G,LIVE_BIRTH,numeric-numeric,spearman_rho,0.761,"clinically overlapping (parity / obstetric history) -- redundancy disclosed, both retained",True
+weight_in_pregnancy,BMI_before,numeric-numeric,spearman_rho,0.744,clinically distinct but correlated -- retain both; NOT a duplicate,True
+mode_of_conception,mode_of_conception_ivf_vs_all,categorical-binary,cramers_v,1.0,deterministic re-expression (ivf_vs_all == 1 iff mode_of_conception == 1) -- HARD target-independent co-entry pair in the C13 YAML contract; the two must never enter a model together,True
+P,nulliparity,numeric-binary,epsilon_squared,0.916,"deterministic derivation (nulliparity == 1 iff P == 0; nulliparity is recomputed upstream directly from the authoritative parity count P) -- review-only relationship group (parity_obstetric_history), NOT a hard co-entry pair: nulliparity is a NONLINEAR basis function of P, so P (count) and I(P == 0) (threshold) can jointly enter a model; joint entry is a modeling-review / coefficient-stability matter, not a global ban. P also carries the full parity count",True
+CS,S_P_CS,numeric-binary,epsilon_squared,1.0,"deterministic re-expression at the binary level (S_P_CS == 1 iff CS > 0) -- review-only relationship group, not a hard co-entry pair; CS also carries the prior-CS count, clinically distinct for TOLAC risk",True
+BMI_before,weight_before_pregnancy,numeric-numeric,spearman_rho,0.908,index vs component (BMI_before = weight/(height/100)^2),True
+BMI_before,height,numeric-numeric,spearman_rho,0.026,index vs component (BMI_before = weight/(height/100)^2),False

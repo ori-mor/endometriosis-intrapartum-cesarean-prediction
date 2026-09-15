@@ -1,0 +1,72 @@
+column,type,missing_%,raw_missing_pct_whole_cohort,structural_nan,row_specific_applicability_gated,tier,recommendation,indicator_created,raw_full_cohort_missing_n,raw_full_cohort_missing_pct,applicable_n,genuine_missing_within_applicable_n,genuine_missing_within_applicable_pct,mechanism_heuristic
+AGE,numeric,0.0,,False,False,0%,none,,0,0.0,431,0,0.0,n/a (no missing)
+G,categorical,0.0,,False,False,0%,none,,0,0.0,431,0,0.0,n/a (no missing)
+nulliparity,binary,0.0,,False,False,0%,none,,0,0.0,431,0,0.0,n/a (no missing)
+P,categorical,0.0,,False,False,0%,none,,0,0.0,431,0,0.0,n/a (no missing)
+LIVE_BIRTH,categorical,0.0,,False,False,0%,none,,0,0.0,431,0,0.0,n/a (no missing)
+EUP,binary,0.0,,False,False,0%,none,,0,0.0,431,0,0.0,n/a (no missing)
+AB,categorical,0.0,,False,False,0%,none,,0,0.0,431,0,0.0,n/a (no missing)
+S_P_CS,binary,0.0,,False,False,0%,none,,0,0.0,431,0,0.0,n/a (no missing)
+CS,categorical,0.0,,False,False,0%,none,,0,0.0,431,0,0.0,n/a (no missing)
+VBAC,binary,0.0,,False,False,0%,none,,0,0.0,431,0,0.0,n/a (no missing)
+smoking,categorical,0.0,,False,False,0%,none,,0,0.0,431,0,0.0,n/a (no missing)
+alcohol,binary,0.0,,False,False,0%,none,,0,0.0,431,0,0.0,n/a (no missing)
+Fetus_Anamoly,binary,0.0,,False,False,0%,none,,0,0.0,431,0,0.0,n/a (no missing)
+deep_endometriosis,binary,0.0,,False,False,0%,none,,0,0.0,431,0,0.0,n/a (no missing)
+adenomyosis,binary,0.0,,False,False,0%,none,,0,0.0,431,0,0.0,n/a (no missing)
+cs_scar_endometriosis,binary,0.0,,False,False,0%,none,,0,0.0,431,0,0.0,n/a (no missing)
+peritoneal_endometriosis,binary,0.0,,False,False,0%,none,,0,0.0,431,0,0.0,n/a (no missing)
+endometrioma,binary,0.0,,False,False,0%,none,,0,0.0,431,0,0.0,n/a (no missing)
+endometriosis_surgery,binary,0.0,,False,False,0%,none,,0,0.0,431,0,0.0,n/a (no missing)
+vaginal_opening_during_surgery,binary,0.0,,False,False,0%,none,,0,0.0,431,0,0.0,n/a (no missing)
+bowel_lesion_resected,binary,0.0,,False,False,0%,none,,0,0.0,431,0,0.0,n/a (no missing)
+bladder_lesion_resected,binary,0.0,,False,False,0%,none,,0,0.0,431,0,0.0,n/a (no missing)
+endo_surgery_adhesiolysis,binary,48.5,,True,False,structural,subgroup-aware; missingness represented by explicit derived status; indicator retired,,209,48.5,222,0,0.0,"insufficient applicable missing cases for a meaningful mechanism test (applicable_missing_n=0, applicable_n=222, gate=endometriosis_surgery==1)"
+weight_before_pregnancy,numeric,20.6,,False,False,<40%,"direct numeric — approved median imputation, fitted within the training fold only",,89,20.6,431,89,20.6,missingness associated with observed variables; MCAR unlikely / compatible with MAR
+weight_in_pregnancy,numeric,56.6,,False,False,40-70%,"CLOSED representation — fold-safe observed-value tertiles (weight_in_pregnancy_cat: low_observed/mid_observed/high_observed) plus not_documented, cutpoints fitted training-fold-only; no imputation is performed in Data Cleaning B",,244,56.6,431,244,56.6,missingness associated with observed variables; MCAR unlikely / compatible with MAR
+height,numeric,15.8,,False,False,<40%,"direct numeric — approved median imputation, fitted within the training fold only",,68,15.8,431,68,15.8,no strong evidence of association with the tested observed variables
+BMI_before,numeric,26.5,,False,False,<40%,assess_mechanism_then_impute_in_cv,,114,26.5,431,114,26.5,no strong evidence of association with the tested observed variables
+BMI_after,numeric,57.3,,False,False,40-70%,"CLOSED representation — fold-safe observed-value tertiles (BMI_after_cat: low_observed/mid_observed/high_observed) plus not_documented, cutpoints fitted training-fold-only; no imputation is performed in Data Cleaning B",,247,57.3,431,247,57.3,missingness associated with observed variables; MCAR unlikely / compatible with MAR
+aspirin_during_pregnancy,binary,0.0,,False,False,0%,none,,0,0.0,431,0,0.0,n/a (no missing)
+clexane_during_pregnancy,binary,0.0,,False,False,0%,none,,0,0.0,431,0,0.0,n/a (no missing)
+mode_of_conception,categorical,0.0,,False,False,0%,none,,0,0.0,431,0,0.0,n/a (no missing)
+mode_of_conception_ivf_vs_all,binary,0.0,,False,False,0%,none,,0,0.0,431,0,0.0,n/a (no missing)
+PPROM,binary,0.0,,False,False,0%,none,,0,0.0,431,0,0.0,n/a (no missing)
+pregnancy_related_hypertensive_disorder,binary,0.0,,False,False,0%,none,,0,0.0,431,0,0.0,n/a (no missing)
+PIH,binary,0.0,,False,False,0%,none,,0,0.0,431,0,0.0,n/a (no missing)
+mild_PET,binary,0.0,,False,False,0%,none,,0,0.0,431,0,0.0,n/a (no missing)
+severe_PET,binary,3.5,,False,False,<40%,assess_mechanism_then_impute_in_cv,,15,3.5,431,15,3.5,missingness associated with observed variables; MCAR unlikely / compatible with MAR
+any_PET,binary,3.5,,False,False,<40%,assess_mechanism_then_impute_in_cv,,15,3.5,431,15,3.5,missingness associated with observed variables; MCAR unlikely / compatible with MAR
+SIPET,binary,0.0,,False,False,0%,none,,0,0.0,431,0,0.0,n/a (no missing)
+HELLP,binary,0.0,,False,False,0%,none,,0,0.0,431,0,0.0,n/a (no missing)
+eclampsia,binary,0.0,,False,False,0%,none,,0,0.0,431,0,0.0,n/a (no missing)
+gestational_diabetes,binary,0.0,,False,False,0%,none,,0,0.0,431,0,0.0,n/a (no missing)
+diabetes_type,categorical,0.0,,False,False,0%,none,,0,0.0,431,0,0.0,n/a (no missing)
+IUGR,binary,0.0,,False,False,0%,none,,0,0.0,431,0,0.0,n/a (no missing)
+placental_abruption,binary,0.0,,False,False,0%,none,,0,0.0,431,0,0.0,n/a (no missing)
+oligohydramnios,binary,0.0,,False,False,0%,none,,0,0.0,431,0,0.0,n/a (no missing)
+polyhydramnios,binary,0.0,,False,False,0%,none,,0,0.0,431,0,0.0,n/a (no missing)
+meconium_stained_amniotic_fluid,binary,0.0,,False,False,0%,none,,0,0.0,431,0,0.0,n/a (no missing)
+IUFD,binary,0.0,,False,False,0%,none,,0,0.0,431,0,0.0,n/a (no missing)
+celestone,binary,0.0,,False,False,0%,none,,0,0.0,431,0,0.0,n/a (no missing)
+magnesium,binary,0.0,,False,False,0%,none,,0,0.0,431,0,0.0,n/a (no missing)
+Hb_before_delivery,numeric,9.0,,False,False,<40%,"direct numeric — approved median imputation, fitted within the training fold only",,39,9.0,431,39,9.0,missingness associated with observed variables; MCAR unlikely / compatible with MAR
+adenomyosis_sonographic_features_clean,categorical,23.1,69.8,False,True,<40%,"row_specific_applicability_gate(gate=adenomyosis==1): not applicable when gate condition fails (excluded from the missingness denominator entirely, never indicated or imputed); genuine missingness is assessed only among applicable rows; no automatic indicator or CV imputation is created here -- this variable's specific representation/handling is documented separately (see Section B6)",,301,69.8,169,39,23.1,no strong evidence of association with the tested observed variables (empirically row-applicability gated; no preprocessing-enforced mask -- see Section B4 header for this variable's specific applicability/handling status)
+endometrioma_size_clean,numeric,60.3,,True,False,structural,subgroup-aware; missingness represented by explicit derived status; indicator retired,,260,60.3,193,22,11.4,structural/subgroup missingness (confirmed code-enforced gate); MCAR/MAR mechanism inference not applicable; variable-specific handling documented separately
+endometrioma_place_clean,categorical,56.4,,True,False,structural,subgroup-aware; missingness represented by explicit derived status; indicator retired,,243,56.4,193,5,2.6,structural/subgroup missingness (confirmed code-enforced gate); MCAR/MAR mechanism inference not applicable; variable-specific handling documented separately
+endometrioma_laterality,categorical,56.4,,True,False,structural,subgroup-aware; missingness represented by explicit derived status; indicator retired,,243,56.4,193,5,2.6,structural/subgroup missingness (confirmed code-enforced gate); MCAR/MAR mechanism inference not applicable; variable-specific handling documented separately
+endo_resection_no_resection,binary,0.0,,False,False,0%,none,,0,0.0,431,0,0.0,n/a (no missing)
+endo_resection_ovarian_endometrioma_unilateral,binary,0.0,,False,False,0%,none,,0,0.0,431,0,0.0,n/a (no missing)
+endo_resection_ovarian_endometrioma_bilateral,binary,0.0,,False,False,0%,none,,0,0.0,431,0,0.0,n/a (no missing)
+endo_resection_adnexa,binary,0.0,,False,False,0%,none,,0,0.0,431,0,0.0,n/a (no missing)
+endo_resection_fallopian_tube,binary,0.0,,False,False,0%,none,,0,0.0,431,0,0.0,n/a (no missing)
+endo_resection_epiploica,binary,0.0,,False,False,0%,none,,0,0.0,431,0,0.0,n/a (no missing)
+endo_resection_uterus,binary,0.0,,False,False,0%,none,,0,0.0,431,0,0.0,n/a (no missing)
+endo_resection_lesion,binary,0.0,,False,False,0%,none,,0,0.0,431,0,0.0,n/a (no missing)
+endo_resection_adhesiolysis,binary,0.0,,False,False,0%,none,,0,0.0,431,0,0.0,n/a (no missing)
+endo_resection_appendix,binary,0.0,,False,False,0%,none,,0,0.0,431,0,0.0,n/a (no missing)
+gestational_age_at_delivery_days,numeric,0.0,,False,False,0%,none,,0,0.0,431,0,0.0,n/a (no missing)
+gestational_age_at_PPROM_days,categorical,5.9,96.3,False,True,<40%,"row_specific_applicability_gate(gate=PPROM==1): not applicable when gate condition fails (excluded from the missingness denominator entirely, never indicated or imputed); genuine missingness is assessed only among applicable rows; no automatic indicator or CV imputation is created here -- this variable's specific representation/handling is documented separately (see Section B6)",,415,96.3,17,1,5.9,"insufficient applicable missing cases for a meaningful mechanism test (applicable_missing_n=1, applicable_n=17, gate=PPROM==1)"
+induction_any_bin,binary,0.0,,False,False,0%,none,,0,0.0,431,0,0.0,n/a (no missing)
+indication_for_induction_clean,categorical,2.1,55.9,False,True,<40%,"row_specific_applicability_gate(gate=induction_any_bin==1): not applicable when gate condition fails (excluded from the missingness denominator entirely, never indicated or imputed); genuine missingness is assessed only among applicable rows; no automatic indicator or CV imputation is created here -- this variable's specific representation/handling is documented separately (see Section B6)",,241,55.9,194,4,2.1,"insufficient applicable missing cases for a meaningful mechanism test (applicable_missing_n=4, applicable_n=194, gate=induction_any_bin==1)"
+intrapartum_fever_or_chorioamnionitis_bin,binary,0.0,,False,False,0%,none,,0,0.0,431,0,0.0,n/a (no missing)

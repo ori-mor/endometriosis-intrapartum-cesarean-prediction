@@ -1,0 +1,88 @@
+column,type,missing_%,applicable_subset_missing_%,structural_nan,applicability_linked_no_preprocessing_mask,imputation_plan,fit_location
+AGE,numeric,0.0,,False,False,none,not_applicable_no_imputation_needed
+G,categorical,0.0,,False,False,none,not_applicable_no_imputation_needed
+nulliparity,binary,0.0,,False,False,none,not_applicable_no_imputation_needed
+P,categorical,0.0,,False,False,none,not_applicable_no_imputation_needed
+LIVE_BIRTH,categorical,0.0,,False,False,none,not_applicable_no_imputation_needed
+EUP,binary,0.0,,False,False,none,not_applicable_no_imputation_needed
+AB,categorical,0.0,,False,False,none,not_applicable_no_imputation_needed
+S_P_CS,binary,0.0,,False,False,none,not_applicable_no_imputation_needed
+CS,categorical,0.0,,False,False,none,not_applicable_no_imputation_needed
+VBAC,binary,0.0,,False,False,none,not_applicable_no_imputation_needed
+smoking,categorical,0.0,,False,False,none,not_applicable_no_imputation_needed
+alcohol,binary,0.0,,False,False,none,not_applicable_no_imputation_needed
+Fetus_Anamoly,binary,0.0,,False,False,none,not_applicable_no_imputation_needed
+deep_endometriosis,binary,0.0,,False,False,none,not_applicable_no_imputation_needed
+adenomyosis,binary,0.0,,False,False,none,not_applicable_no_imputation_needed
+cs_scar_endometriosis,binary,0.0,,False,False,none,not_applicable_no_imputation_needed
+peritoneal_endometriosis,binary,0.0,,False,False,none,not_applicable_no_imputation_needed
+endometrioma,binary,0.0,,False,False,none,not_applicable_no_imputation_needed
+endometriosis_surgery,binary,0.0,,False,False,none,not_applicable_no_imputation_needed
+vaginal_opening_during_surgery,binary,0.0,,False,False,none,not_applicable_no_imputation_needed
+bowel_lesion_resected,binary,0.0,,False,False,none,not_applicable_no_imputation_needed
+bladder_lesion_resected,binary,0.0,,False,False,none,not_applicable_no_imputation_needed
+endo_surgery_adhesiolysis,binary,48.5,,True,False,"none for the raw field -- do not apply ordinary most-frequent imputation. Section B5g creates the deterministic, final derived_endo_surgery_adhesion_status representation (3 categories: no_prior_endo_surgery / prior_surgery_without_documented_adhesions / prior_surgery_with_documented_adhesions) from the endometriosis_surgery / endo_surgery_adhesiolysis subgroup context. The raw column is dropped from the final B export (Section B7).",not_applicable_use_derived_subgroup_aware_representation
+weight_before_pregnancy,numeric,20.6,,False,False,"APPROVED: median imputation. Data Cleaning B preserves NaN and performs no imputation itself -- the median is fitted training-fold-only in modeling (SimpleImputer, modeling_core.py). Only the fitting location is deferred.",approved_median_fold_safe_modeling_core
+weight_in_pregnancy,numeric,56.6,,False,False,"APPROVED: fold-safe observed-value tertile categories (low_observed/mid_observed/high_observed) plus not_documented for missing rows -- q33/q67 cutpoints fitted training-fold-only in modeling (FoldSafeQuantileCategoryTransformer, modeling_core.py). Data Cleaning B materializes no dataframe column for this representation (Section B5b); the continuous source value and its original NaNs are preserved as-is. No separate missingness indicator is created -- the fold-safe categorical's not_documented bucket carries the missingness information. No numerical imputation of the raw continuous value is approved -- only the categorical representation. Only the cutpoint fitting location is deferred.",approved_fold_safe_tertile_deferred_fitting
+height,numeric,15.8,,False,False,"APPROVED: median imputation. Data Cleaning B preserves NaN and performs no imputation itself -- the median is fitted training-fold-only in modeling (SimpleImputer, modeling_core.py). Only the fitting location is deferred.",approved_median_fold_safe_modeling_core
+BMI_before,numeric,26.5,,False,False,"Data Cleaning B deterministically recomputes BMI_before = weight_before_pregnancy/(height/100)^2 only for rows where both inputs are observed (Section B5d); not a learned imputation. Rows where either input remains missing keep BMI_before as NaN in the exported Batch19. At modeling time, if BMI_before is selected, modeling_core.py's FoldSafeRecomputedBMITransformer fold-safe-medians height/weight_before_pregnancy (training-fold-only) and recomputes BMI_before from those -- BMI_before itself is never directly median-imputed.",data_cleaning_b_partial_formula_recompute_observed_inputs_only
+BMI_after,numeric,57.3,,False,False,"APPROVED: fold-safe observed-value tertile categories (low_observed/mid_observed/high_observed) plus not_documented for missing rows -- q33/q67 cutpoints fitted training-fold-only in modeling (FoldSafeQuantileCategoryTransformer, modeling_core.py). Data Cleaning B materializes no dataframe column for this representation (Section B5b); the continuous source value and its original NaNs are preserved as-is. No numerical imputation of the raw continuous value is approved -- only the categorical representation. Only the cutpoint fitting location is deferred.",approved_fold_safe_tertile_deferred_fitting
+aspirin_during_pregnancy,binary,0.0,,False,False,none,not_applicable_no_imputation_needed
+clexane_during_pregnancy,binary,0.0,,False,False,none,not_applicable_no_imputation_needed
+mode_of_conception,categorical,0.0,,False,False,none,not_applicable_no_imputation_needed
+mode_of_conception_ivf_vs_all,binary,0.0,,False,False,none,not_applicable_no_imputation_needed
+PPROM,binary,0.0,,False,False,none,not_applicable_no_imputation_needed
+pregnancy_related_hypertensive_disorder,binary,0.0,,False,False,none,not_applicable_no_imputation_needed
+PIH,binary,0.0,,False,False,none,not_applicable_no_imputation_needed
+mild_PET,binary,0.0,,False,False,none,not_applicable_no_imputation_needed
+severe_PET,binary,3.5,,False,False,"none -- replaced by severe_PET_cat (categorical + not_documented, Section B5e); no imputation performed; excluded from final export",not_applicable_replaced_by_deterministic_representation
+any_PET,binary,3.5,,False,False,"none -- replaced by any_PET_cat (categorical + not_documented, Section B5e); no imputation performed; excluded from final export",not_applicable_replaced_by_deterministic_representation
+SIPET,binary,0.0,,False,False,none,not_applicable_no_imputation_needed
+HELLP,binary,0.0,,False,False,none,not_applicable_no_imputation_needed
+eclampsia,binary,0.0,,False,False,none,not_applicable_no_imputation_needed
+gestational_diabetes,binary,0.0,,False,False,none,not_applicable_no_imputation_needed
+diabetes_type,categorical,0.0,,False,False,none,not_applicable_no_imputation_needed
+IUGR,binary,0.0,,False,False,none,not_applicable_no_imputation_needed
+placental_abruption,binary,0.0,,False,False,none,not_applicable_no_imputation_needed
+oligohydramnios,binary,0.0,,False,False,none,not_applicable_no_imputation_needed
+polyhydramnios,binary,0.0,,False,False,none,not_applicable_no_imputation_needed
+meconium_stained_amniotic_fluid,binary,0.0,,False,False,none,not_applicable_no_imputation_needed
+IUFD,binary,0.0,,False,False,none,not_applicable_no_imputation_needed
+celestone,binary,0.0,,False,False,none,not_applicable_no_imputation_needed
+magnesium,binary,0.0,,False,False,none,not_applicable_no_imputation_needed
+Hb_before_delivery,numeric,9.0,,False,False,"APPROVED: median imputation. Data Cleaning B preserves NaN and performs no imputation itself -- the median is fitted training-fold-only in modeling (SimpleImputer, modeling_core.py). Only the fitting location is deferred.",approved_median_fold_safe_modeling_core
+adenomyosis_sonographic_features_clean,categorical,69.8,23.1,False,True,"none -- row-specific applicability gate (adenomyosis==1), confirmed empirically; not-applicable rows (adenomyosis==0) are structural and never imputed or indicated; replaced by the adenomyosis multi-hot representation (adenomyosis_feature_1..11 + adenomyosis_features_unknown, Section B5f), which represents genuinely unresolved applicable rows via the explicit adenomyosis_features_unknown indicator rather than imputing them; no imputation performed; raw source excluded from final export",not_applicable_row_specific_applicability_gate
+endometrioma_size_clean,numeric,60.3,,True,False,none -- replaced by endometrioma_size_status / endometrioma_presence_laterality (Section B5c); no imputation performed; excluded from final export,not_applicable_replaced_by_deterministic_representation
+endometrioma_place_clean,categorical,56.4,,True,False,none -- replaced by endometrioma_size_status / endometrioma_presence_laterality (Section B5c); no imputation performed; excluded from final export,not_applicable_replaced_by_deterministic_representation
+endometrioma_laterality,categorical,56.4,,True,False,none -- replaced by endometrioma_size_status / endometrioma_presence_laterality (Section B5c); no imputation performed; excluded from final export,not_applicable_replaced_by_deterministic_representation
+endo_resection_no_resection,binary,0.0,,False,False,none,not_applicable_no_imputation_needed
+endo_resection_ovarian_endometrioma_unilateral,binary,0.0,,False,False,none,not_applicable_no_imputation_needed
+endo_resection_ovarian_endometrioma_bilateral,binary,0.0,,False,False,none,not_applicable_no_imputation_needed
+endo_resection_adnexa,binary,0.0,,False,False,none,not_applicable_no_imputation_needed
+endo_resection_fallopian_tube,binary,0.0,,False,False,none,not_applicable_no_imputation_needed
+endo_resection_epiploica,binary,0.0,,False,False,none,not_applicable_no_imputation_needed
+endo_resection_uterus,binary,0.0,,False,False,none,not_applicable_no_imputation_needed
+endo_resection_lesion,binary,0.0,,False,False,none,not_applicable_no_imputation_needed
+endo_resection_adhesiolysis,binary,0.0,,False,False,none,not_applicable_no_imputation_needed
+endo_resection_appendix,binary,0.0,,False,False,none,not_applicable_no_imputation_needed
+gestational_age_at_delivery_days,numeric,0.0,,False,False,none,not_applicable_no_imputation_needed
+gestational_age_at_PPROM_days,categorical,96.3,5.9,False,True,"APPROVED: four-state structural/applicability-gated timing representation -- no_PPROM (PPROM==0, structural), PPROM_earlier / PPROM_later (PPROM==1, observed timing vs. a training-fold-only median split of the applicable subgroup), PPROM_timing_unknown (PPROM==1, genuinely missing timing -- currently 1/17 applicable rows). Split-point fitted training-fold-only in modeling (FoldSafeQuantileCategoryTransformer, modeling_core.py); never derived from gestational_age_at_delivery_days. Data Cleaning B materializes no dataframe column for this representation (Section B5b). Only the split-point fitting location is deferred; the applicable-subgroup denominator (17) and its genuinely-missing count (1) are structural facts established here (Section B4b).",approved_fold_safe_applicability_gated_split_deferred_fitting
+induction_any_bin,binary,0.0,,False,False,none,not_applicable_no_imputation_needed
+indication_for_induction_clean,categorical,55.9,2.1,False,True,"none for the raw field -- classified intrapartum_predictor_exclude_from_prelabor_model (Stage 3 / intrapartum horizon only). Section B5h creates the deterministic, final indication_for_induction_status representation (no_induction / induction_indication_unknown / the observed indication string verbatim); the 4 applicable-missing rows are resolved as induction_indication_unknown by that representation. The raw column is dropped from the final B export (Section B7).",not_applicable_use_derived_subgroup_aware_representation
+intrapartum_fever_or_chorioamnionitis_bin,binary,0.0,,False,False,none,not_applicable_no_imputation_needed
+severe_PET_cat,categorical,0.0,,False,,"none -- not_documented is a valid category label, not a missing value",not_applicable_deterministic_no_fit
+any_PET_cat,categorical,0.0,,False,,"none -- not_documented is a valid category label, not a missing value",not_applicable_deterministic_no_fit
+endometrioma_size_status,categorical,0.0,,False,,not imputed in Data Cleaning B; structural no-endometrioma and genuinely unknown endometrioma size are represented as explicit categorical states,not_applicable_deterministic_no_fit
+endometrioma_presence_laterality,categorical,0.0,,False,,"not imputed in Data Cleaning B; genuinely unresolved endometrioma==1 laterality is the explicit laterality_unknown category (0 missing), not true missing and not imputed",not_applicable_deterministic_no_fit
+adenomyosis_feature_1,binary,0.0,,False,,not imputed in Data Cleaning B; structural no-adenomyosis and genuinely unknown sonographic-feature detail are represented as explicit 0/1 indicator states,not_applicable_deterministic_no_fit
+adenomyosis_feature_2,binary,0.0,,False,,not imputed in Data Cleaning B; structural no-adenomyosis and genuinely unknown sonographic-feature detail are represented as explicit 0/1 indicator states,not_applicable_deterministic_no_fit
+adenomyosis_feature_3,binary,0.0,,False,,not imputed in Data Cleaning B; structural no-adenomyosis and genuinely unknown sonographic-feature detail are represented as explicit 0/1 indicator states,not_applicable_deterministic_no_fit
+adenomyosis_feature_4,binary,0.0,,False,,not imputed in Data Cleaning B; structural no-adenomyosis and genuinely unknown sonographic-feature detail are represented as explicit 0/1 indicator states,not_applicable_deterministic_no_fit
+adenomyosis_feature_5,binary,0.0,,False,,not imputed in Data Cleaning B; structural no-adenomyosis and genuinely unknown sonographic-feature detail are represented as explicit 0/1 indicator states,not_applicable_deterministic_no_fit
+adenomyosis_feature_6,binary,0.0,,False,,not imputed in Data Cleaning B; structural no-adenomyosis and genuinely unknown sonographic-feature detail are represented as explicit 0/1 indicator states,not_applicable_deterministic_no_fit
+adenomyosis_feature_7,binary,0.0,,False,,not imputed in Data Cleaning B; structural no-adenomyosis and genuinely unknown sonographic-feature detail are represented as explicit 0/1 indicator states,not_applicable_deterministic_no_fit
+adenomyosis_feature_8,binary,0.0,,False,,not imputed in Data Cleaning B; structural no-adenomyosis and genuinely unknown sonographic-feature detail are represented as explicit 0/1 indicator states,not_applicable_deterministic_no_fit
+adenomyosis_feature_9,binary,0.0,,False,,not imputed in Data Cleaning B; structural no-adenomyosis and genuinely unknown sonographic-feature detail are represented as explicit 0/1 indicator states,not_applicable_deterministic_no_fit
+adenomyosis_feature_10,binary,0.0,,False,,not imputed in Data Cleaning B; structural no-adenomyosis and genuinely unknown sonographic-feature detail are represented as explicit 0/1 indicator states,not_applicable_deterministic_no_fit
+adenomyosis_feature_11,binary,0.0,,False,,not imputed in Data Cleaning B; structural no-adenomyosis and genuinely unknown sonographic-feature detail are represented as explicit 0/1 indicator states,not_applicable_deterministic_no_fit
+adenomyosis_features_unknown,binary,0.0,,False,,not imputed in Data Cleaning B; structural no-adenomyosis and genuinely unknown sonographic-feature detail are represented as explicit 0/1 indicator states,not_applicable_deterministic_no_fit

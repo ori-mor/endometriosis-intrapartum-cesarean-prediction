@@ -1,0 +1,67 @@
+{
+  "predictors": [
+    "AGE",
+    "nulliparity",
+    "S_P_CS",
+    "BMI_before",
+    "derived_hypertension_pih_pet_spectrum",
+    "induction_any_bin"
+  ],
+  "input_columns_read": [
+    "AGE",
+    "nulliparity",
+    "S_P_CS",
+    "BMI_before",
+    "derived_hypertension_pih_pet_spectrum",
+    "induction_any_bin",
+    "height",
+    "weight_before_pregnancy"
+  ],
+  "transformers": [
+    {
+      "name": "num",
+      "columns": [
+        "AGE",
+        "nulliparity",
+        "S_P_CS",
+        "induction_any_bin"
+      ],
+      "steps": [
+        "tuple",
+        "tuple"
+      ]
+    },
+    {
+      "name": "cat",
+      "columns": [
+        "derived_hypertension_pih_pet_spectrum"
+      ],
+      "steps": [
+        "tuple",
+        "tuple"
+      ]
+    },
+    {
+      "name": "bmi_before_recompute",
+      "columns": [
+        "height",
+        "weight_before_pregnancy"
+      ],
+      "steps": [
+        "tuple",
+        "tuple"
+      ]
+    },
+    {
+      "name": "remainder",
+      "columns": [
+        "BMI_before"
+      ],
+      "steps": "drop"
+    }
+  ],
+  "scaling": "StandardScaler on all numeric/encoded columns (fit on the full 431-row cohort for this final refit; fold-safe / training-fold-only for Part A's CV)",
+  "bmi_before_note": "BMI_before is fold-safe-recomputed from height and weight_before_pregnancy (FoldSafeRecomputedBMITransformer) -- here fit on the full cohort, not a fold.",
+  "categorical_encoding": "OneHotEncoder(handle_unknown='ignore') for derived_hypertension_pih_pet_spectrum (full-dummy, penalized model -- not reference/drop-first coding)",
+  "missingness": "median impute (numeric) / most-frequent impute (categorical) fit on the full cohort"
+}

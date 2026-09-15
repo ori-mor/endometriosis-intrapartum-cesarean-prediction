@@ -1,0 +1,8 @@
+metric,compact_ridge_mean,compact_ridge_sd,historical_stage3_lasso_baseline_mean,historical_stage3_lasso_baseline_sd
+PR-AUC,0.3479,0.0146,0.272,0.0176
+AUROC,0.7977,0.0112,0.715,0.0294
+Brier score,0.1057,0.0014,0.127,0.0139
+Brier skill score,0.13,0.0119,-0.0449,0.114
+Log-loss,0.3365,0.0054,0.4206,0.0701
+Calibration intercept,0.1623,0.0964,-0.689,0.667
+Calibration slope,1.1153,0.0657,0.6604,0.3475

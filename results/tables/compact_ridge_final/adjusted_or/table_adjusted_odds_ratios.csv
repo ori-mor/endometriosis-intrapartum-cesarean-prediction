@@ -1,0 +1,8 @@
+source_variable,clinical_label,comparison_unit,reference_level,adjusted_or,ci_lower,ci_upper,coefficient,std_error,p_value
+AGE,Age (per 1-year increase),per 1-year increase,n/a (continuous),1.1365,1.0655,1.2122,0.1279,0.0329,0.0001
+nulliparity,Nulliparous vs. non-nulliparous (prior birth),nulliparous (1) vs. prior birth (0),0 = non-nulliparous / prior birth,8.3675,3.3313,21.0174,2.1244,0.4699,0.0
+S_P_CS,Prior cesarean vs. no prior cesarean,prior cesarean (1) vs. none (0),0 = no prior cesarean,14.6165,3.2964,64.8117,2.6822,0.7599,0.0004
+BMI_before,Pre-pregnancy BMI (per 1 kg/m² increase),per 1 kg/m² increase,n/a (continuous),0.9889,0.9289,1.0528,-0.0111,0.032,0.7272
+derived_hypertension_pih_pet_spectrum,PIH / gestational hypertension vs. no hypertensive disorder,pih_gestational_htn vs. no_hypertensive_disorder,no_hypertensive_disorder,2.1507,0.382,12.1085,0.7658,0.8817,0.3851
+derived_hypertension_pih_pet_spectrum,Preeclampsia spectrum vs. no hypertensive disorder,preeclampsia_spectrum vs. no_hypertensive_disorder,no_hypertensive_disorder,2.2476,0.5568,9.0725,0.8099,0.7119,0.2553
+induction_any_bin,Labor induction vs. no induction,induction (1) vs. none (0),0 = no induction,6.006,2.8726,12.5571,1.7928,0.3763,0.0

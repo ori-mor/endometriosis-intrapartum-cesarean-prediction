@@ -1,0 +1,19 @@
+Variable,Clinical Label,Stage,Overall,Vaginal delivery,Intrapartum CS,Missing n (%)
+AGE,Maternal age,1,31.6 ± 4.8,31.3 ± 4.8,33.2 ± 4.8,0 (0.0%)
+BMI_before,Pre-pregnancy BMI,1,22.0 [19.7–25.8],22.0 [19.9–25.7],21.9 [19.6–25.9],114 (26.5%)
+nulliparity,Nulliparity,1,237 (55.0%),186 (50.3%),51 (83.6%),0 (0.0%)
+S_P_CS,Status post previous cesarean section,1,18 (4.2%),14 (3.8%),4 (6.6%),0 (0.0%)
+derived_hypertension_pih_pet_spectrum: no_hypertensive_disorder,Hypertensive disease spectrum (PIH/PET),1,397 (95.4%),344 (96.6%),53 (88.3%),15 (3.5%)
+derived_hypertension_pih_pet_spectrum: pih_gestational_htn,Hypertensive disease spectrum (PIH/PET),1,8 (1.9%),5 (1.4%),3 (5.0%),
+derived_hypertension_pih_pet_spectrum: preeclampsia_spectrum,Hypertensive disease spectrum (PIH/PET),1,11 (2.6%),7 (2.0%),4 (6.7%),
+induction_any_bin,Labor induction (any),3,194 (45.0%),147 (39.7%),47 (77.0%),0 (0.0%)
+VBAC,Vaginal birth after cesarean (VBAC),1,2 (0.5%),2 (0.5%),0 (0.0%),0 (0.0%)
+mode_of_conception: spontaneous,Mode of conception,1,293 (68.0%),259 (70.0%),34 (55.7%),0 (0.0%)
+mode_of_conception: IUI,Mode of conception,1,9 (2.1%),5 (1.4%),4 (6.6%),
+mode_of_conception: IVF,Mode of conception,1,125 (29.0%),103 (27.8%),22 (36.1%),
+mode_of_conception: other_fertility_treatment,Mode of conception,1,4 (0.9%),3 (0.8%),1 (1.6%),
+gestational_age_at_delivery_days,Gestational age at delivery (days),3,275.0 [267.0–281.0],275.0 [268.0–281.0],272.0 [264.0–281.0],0 (0.0%)
+deep_endometriosis,Deep infiltrating endometriosis phenotype,1,152 (35.3%),131 (35.4%),21 (34.4%),0 (0.0%)
+endometrioma,Endometrioma present,1,193 (44.8%),168 (45.4%),25 (41.0%),0 (0.0%)
+adenomyosis,Adenomyosis (presence),1,169 (39.2%),143 (38.6%),26 (42.6%),0 (0.0%)
+endometriosis_surgery,Prior endometriosis surgery,1,222 (51.5%),192 (51.9%),30 (49.2%),0 (0.0%)

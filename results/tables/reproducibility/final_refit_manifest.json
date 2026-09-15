@@ -1,0 +1,77 @@
+{
+  "generated_utc": "2026-09-04T16:42:11Z",
+  "run_type": "FINAL_FULL_DATA_REFIT",
+  "note": "Fit ONCE on all 431 deliveries. Training-set fit statistics are NOT model performance -- performance is reported exclusively from the locked internal validation run (locked_validation_manifest.json).",
+  "n_rows_used": 431,
+  "n_rows_expected": 431,
+  "frozen_predictors": [
+    "AGE",
+    "nulliparity",
+    "S_P_CS",
+    "BMI_before",
+    "derived_hypertension_pih_pet_spectrum",
+    "induction_any_bin"
+  ],
+  "penalty": "l2",
+  "C_grid": [
+    0.01,
+    0.01778279410038923,
+    0.03162277660168379,
+    0.05623413251903491,
+    0.1,
+    0.1778279410038923,
+    0.31622776601683794,
+    0.5623413251903491,
+    1.0,
+    1.7782794100389228,
+    3.1622776601683795,
+    5.623413251903491,
+    10.0,
+    17.78279410038923,
+    31.622776601683793
+  ],
+  "selection_rule": "pr_auc_one_se_then_brier",
+  "tuning_inner_cv": {
+    "repeat": 1,
+    "fold": 1,
+    "inner_folds": 5,
+    "seed": 42101,
+    "note": "one canonical grouped-5-fold split of the full cohort, same deterministic seed convention as every outer fold's inner CV"
+  },
+  "chosen_C": 0.31622776601683794,
+  "intercept": -2.0475514530241328,
+  "converged": true,
+  "convergence_detail": {
+    "converged": true,
+    "convergence_warning": false,
+    "n_iter": 15,
+    "max_iter": 20000,
+    "solver": "lbfgs"
+  },
+  "n_active_source_predictors": 6,
+  "active_sources": [
+    "AGE",
+    "BMI_before",
+    "S_P_CS",
+    "derived_hypertension_pih_pet_spectrum",
+    "induction_any_bin",
+    "nulliparity"
+  ],
+  "l2_coef_norm": 1.4407925103186157,
+  "signed_source_coef": {
+    "AGE": 0.5413620111272536,
+    "nulliparity": 0.8896415592232587,
+    "S_P_CS": 0.4421720605307851,
+    "induction_any_bin": 0.7931343040994873,
+    "derived_hypertension_pih_pet_spectrum": null,
+    "BMI_before": -0.028169779116340315
+  },
+  "reproducibility": {
+    "git_sha": "0cf9fd171847c82e66d7eb1fac1c5fc1011c4d14",
+    "branch": "final-model/compact-ridge-lock (isolated worktree, based on origin/main)",
+    "eda_c_registry_sha256": "3ca23c0f9f11e340a962630c00ffa73447000e0a497975ddd79304861d1759e7",
+    "eda_c_matrix_sha256": "12733c8548cdda2e3c19ae563b0750ba0f41173fc93eaed730f35f2c1f8a8c69"
+  },
+  "endometriosis_forced_predictor": null,
+  "endometriosis_forced_predictor_note": "No endometriosis-specific predictor is present in the frozen architecture. The completed endometriosis exploratory analyses (endo_addon / endo_signal_recovery / endo_feature_profiling / endo_phenotype_aggregation, all on exploratory/overnight-model-improvement) found no stable incremental predictive value from any measured endometriosis phenotype/severity/surgical-history variable beyond this obstetric core; that negative result is retained as part of the scientific findings, not overridden by forcing a predictor into the model."
+}

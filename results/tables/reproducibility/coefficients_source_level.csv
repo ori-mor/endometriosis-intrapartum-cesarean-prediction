@@ -1,0 +1,7 @@
+source_predictor,coefficient_standardized_scale,sign
+AGE,{'num__AGE': 0.5413620111272536},0.5413620111272536
+nulliparity,{'num__nulliparity': 0.8896415592232587},0.8896415592232587
+S_P_CS,{'num__S_P_CS': 0.4421720605307851},0.4421720605307851
+induction_any_bin,{'num__induction_any_bin': 0.7931343040994873},0.7931343040994873
+derived_hypertension_pih_pet_spectrum,"{'cat__derived_hypertension_pih_pet_spectrum_no_hypertensive_disorder': -0.331996416808403, 'cat__derived_hypertension_pih_pet_spectrum_pih_gestational_htn': 0.13519819023622348, 'cat__derived_hypertension_pih_pet_spectrum_preeclampsia_spectrum': 0.19358787016657816}",
+BMI_before,{'bmi_before_recompute__BMI_before': -0.028169779116340315},-0.028169779116340315

@@ -1,0 +1,394 @@
+metadata:
+  source_workbook: clinical_variable_dictionary.xlsx
+  scope: original/source variable semantics and code mappings only
+  generated: '2026-08-19'
+  row_count: 128
+variables:
+- name: subject_number
+  description_he: מספר מטופלת
+  codes_he: גם מזהה ייחודי אך ישנן מטופלות עם מספר לידות, לכן בשורות מסויימות המספר חסר
+- name: AGE
+  description_he: גיל המטופלת
+  codes_he: ערך בשנים
+- name: G
+  description_he: מספר ההריונות (כולל ההריון הנוכחי)
+  codes_he: null
+- name: nulliparity
+  description_he: בינארי - האם זוהי לידתה הראשונה של המטופלת
+  codes_he: null
+- name: P
+  description_he: מספר הלידות
+  codes_he: null
+- name: LIVE_BIRTH
+  description_he: מספר הלידות החיות הקודמות של היולדת
+  codes_he: null
+- name: EUP
+  description_he: בינארי - האם היה בעבר הריון חוץ רחמי
+  codes_he: null
+- name: AB
+  description_he: מספר ההפלות / אובדני ההריון שחוותה המטופלת (ללא הגדרת גיל הריון גבולי מדויק)
+  codes_he: null
+- name: S_P_CS
+  description_he: בינארי - האם המטופלת עברה ניתוח קיסרי בעבר
+  codes_he: null
+- name: CS
+  description_he: מספר הניתוחים הקיסריים שהמטופלת עברה בעבר
+  codes_he: null
+- name: VBAC
+  description_he: בינארי - האם הייתה לידה נרתיקית לאחר ניתוח קיסרי
+  codes_he: null
+- name: smoking
+  description_he: 'עישון '
+  codes_he: 0 = לא מעשנת, 1 = מעשנת בהווה, 2 = עישנה בעבר
+- name: alcohol
+  description_he: בינארי - האם המטופלת שותה במהלך ההריון
+  codes_he: null
+- name: any_medical_problem
+  description_he: בינארי - האם למטופלת יש בעיה רפואית ידועה
+  codes_he: null
+- name: any_medical_problem_comment
+  description_he: פירוט הבעיות הרפואיות
+  codes_he: null
+- name: regular_medications
+  description_he: בינארי - האם המטופלת נוטלת תרופות באופן קבוע
+  codes_he: null
+- name: regular_medications_comment
+  description_he: פירוט התרופות הקבועות
+  codes_he: null
+- name: Fetus_Anamoly
+  description_he: בינארי - האם היה מום בעובר או חריגה בהתפתחות העובר בלידה הנוכחית לפני הלידה
+  codes_he: null
+- name: Fetus_Anamoly_comment
+  description_he: פירוט המום בעובר או מתי נבדק?
+  codes_he: '0-No finding
+
+    1-Findings
+
+    2-not performed'
+- name: deep_endometriosis
+  description_he: בינארי - האם פנוטיפ המחלה של המטופלת הוא deep endometriosis
+  codes_he: null
+- name: adenomyosis
+  description_he: בינארי - קיום או העידר אדנומיוזיס
+  codes_he: null
+- name: superficial_endometriosis
+  description_he: בינארי - האם פנוטיפ המחלה של המטופלת הוא superficial endometriosis
+  codes_he: null
+- name: clinical_diagnosis_only
+  description_he: בינארי - האם יש אבחנה קלינית בלבד של אנדומטריוזיס
+  codes_he: null
+- name: cs_scar_endometriosis
+  description_he: בינארי - נוכחות אנדומטריוזיס בצלקת של ניתוח קיסרי קודם.
+  codes_he: null
+- name: peritoneal_endometriosis
+  description_he: בינארי - האם פנוטיפ המחלה של המטופלת הוא peritoneal endometriosis
+  codes_he: null
+- name: diagnosis_date
+  description_he: תאריך אבחון
+  codes_he: מעורבב שנה, תאריך מדוייק ומעט מלל
+- name: endometrioma
+  description_he: בינארי - נוכחות אנדומטריומה
+  codes_he: null
+- name: endometrioma_size
+  description_he: גודל האנדומטריומה
+  codes_he: מעורבב מ"מ ס"מ, עברית אנגלית ומספר ללא יחידת מידה
+- name: endometrioma_place
+  description_he: מיקום האנדומטריומה
+  codes_he: 1 - שחלה ימנית, 2 - שחלה שמאלית, 3 - דו צדדי
+- name: adenomyosis_sonographic_features
+  description_he: 'מאפיינים סונגרפיים של אדנומיוזיס '
+  codes_he: '1 - רחם במבנה גלובולרי, 2 - מנח בצורת "סימן שאלה", 3 - אסימטריה בין הדפנות, 4 - איים אקוגניים במיומטריום או מיומטריום באקוגניות מוגבר, 5 - ציסטות מיומטריאליות, 6 - אי סדירות של Junctional Zone (אזור החיבור), 7 - עיבוי של אזור החיבור, 8 - מבנים אקוגנים ב junctional zone/ ולחילופין: buds אקוגנים ב junctional zone (אזור החיבור), 9 - הצללות בצורת מניפה, 10 - גבול המיומטריום אנדומטריום או: גבול המיומטריום אנדומטריום לא חד, 11 - זרימות דם דיפוזיות (אבל זה משהו שכותבים גם על ממצאים שלא קשורים לאנדו)'
+- name: endometriosis_surgery
+  description_he: בינארי - האם המטופלת עברה ניתוח אנדומטריוזיס בעבר
+  codes_he: בינארי ומעט טקסט
+- name: endo_resection_sites
+  description_he: מה הוסר בניתוח אנדומטריוזיס
+  codes_he: 1 - אנדומטריומה שחלתית שמאלית, 2 - אנדומטריומה שחלתית ימנית, 3 - אנדומטריומות או ציסטות שחלתיות דו צדדיות, 4 - טפולה ימנית (טפולה = חצוצרה + שחלה), 5 - טפולה שמאלית, 6 - חצוצרה ימנית, 7 - חצוצרה שמאלית, 8 - אפיפלואיקה, 9 - רחם, 10 - הסרת מוקד אנדומטריוזיס, 11 - הפרדת הידבקויות
+- name: vaginal_opening_during_surgery
+  description_he: בינארי - האם הייתה פתיחת נרתיק בניתוח אנדו
+  codes_he: null
+- name: bowel_lesion_resected
+  description_he: בינארי - האם הוצא מוקד במעי בניתוח אנדו
+  codes_he: null
+- name: bladder_lesion_resected
+  description_he: בינארי - האם הוצא מוקד בשלופחית בניתוח אנדו
+  codes_he: null
+- name: surgery_details
+  description_he: פירוט הניתוח - היכן בדיוק היה המוקד, גודל המוקד, האם היתה פתיחת נרתיק בניתוח, ניתוח במעי, ניתוח בשלפוחית
+  codes_he: null
+- name: endo_surgery_adhesiolysis
+  description_he: בינארי - האם תוארו הידבקויות במהלך ניתוח אנדו
+  codes_he: null
+- name: comment_1
+  description_he: בעיקר הערות נוספות שקשורות לניתוחי אנדומטריוזיס?
+  codes_he: null
+- name: weight_before_pregnancy
+  description_he: משקל לפני היריון
+  codes_he: null
+- name: weight_in_pregnancy
+  description_he: משקל במהלך ההריון - מבוסס לרוב על דיווח עצמי של האישה ולא תמיד משקף שקילה ממש לפני הלידה
+  codes_he: null
+- name: height
+  description_he: גובה
+  codes_he: null
+- name: BMI_before
+  description_he: BMI לפני ההריון
+  codes_he: null
+- name: BMI_after
+  description_he: BMI במהלך ההריון
+  codes_he: null
+- name: aspirin_during_pregnancy
+  description_he: בינארי - האם המטופלת טופלה באספרין במהלך ההריון
+  codes_he: null
+- name: clexane_during_pregnancy
+  description_he: בינארי - האם המטופלת טופלה בקלקסן (מדללת דם) במהלך ההריון
+  codes_he: null
+- name: mode_of_conception
+  description_he: אופן הכניסה להיריון
+  codes_he: 0 - היריון ספונטני, 1 - הפריה חוץ־גופית (IVF), 2 - הזרעה תוך־רחמית (IUI), 3 - טיפולי פריון (Clomifene/GT).
+- name: mode_of_conception_details
+  description_he: פירוט - אופן הכניסה להיריון
+  codes_he: null
+- name: mode_of_conception_ivf_vs_all
+  description_he: בינארי - אופן הכניסה להריון IVF לעומת השאר
+  codes_he: 1 - IVF (הפריה חוץ גופית), 0 - טיפול אחר או ללא טיפול
+- name: PPROM
+  description_he: 'בינארי -                                                   האם היה PPROM- Preterm Prelabor Rupture of Membranes -  מתייחס לירידת מים מוקדמת - טרם שבוע 37 להיריון וטרם כניסה ללידה, והיא מתרחשת ב כ 3% מכלל ההריונות. '
+  codes_he: null
+- name: gestational_age_at_PPROM
+  description_he: 'גיל הריון בעת PPROM '
+  codes_he: סוג של מתמשך, כתוב כמספר השבועות פלוס מספר הימים או לעיתים נקודה בין השניים.
+- name: pregnancy_related_hypertensive_disorder
+  description_he: בינארי - האם תועדה אצל המטופלת הפרעת יתר לחץ דם שהתפתחה במהלך ההיריון, כגון יתר לחץ דם הריוני או רעלת היריון
+  codes_he: null
+- name: PIH
+  description_he: בינארי - יתר לחץ דם הריוני ללא חלבון בשתן.
+  codes_he: null
+- name: mild_PET
+  description_he: בינארי - קיום או העדר רעלת הריון קלה
+  codes_he: null
+- name: severe_PET
+  description_he: בינארי - קיום או העדר רעלת הריון חמורה
+  codes_he: null
+- name: any_PET
+  description_he: בינארי - קיום או העדר רעלת הריון מכל סוג
+  codes_he: null
+- name: SIPET
+  description_he: בינארי - מציין האם אישה עם יתר לחץ דם כרוני שקדם להיריון, פיתחה רעלת היריון במהלכו (במהלך ההריון)
+  codes_he: null
+- name: HELLP
+  description_he: בינארי - HELLP סינדרום הכולל גם הפרעות מעבדה, גם סוג של מחלת יתר לחץ דם.
+  codes_he: null
+- name: eclampsia
+  description_he: בינארי - Eclampsia המצב החמור ביותר עם פרכוסים, של יתר לחץ דם.
+  codes_he: null
+- name: gestational_diabetes
+  description_he: בינארי - סכרת הריון.
+  codes_he: null
+- name: diabetes_type
+  description_he: קטגוריאלי - סוג הסוכרת (סוכרת הריון או סוכרת רגילה)
+  codes_he: 0 - No diabetes, 1 - Pregestational diabetes, 2 - Diabetes type 1, 3 - Diabetes type 2, 4 - GDMA1, 5 - GDMA2
+- name: IUGR
+  description_he: בינארי - עובר שמעריכים כקטן במהלך ההריון
+  codes_he: null
+- name: placental_abruption
+  description_he: בינארי - היפרדות שלייה.
+  codes_he: null
+- name: placenta_accreta
+  description_he: בינארי - שליה נעוצה.
+  codes_he: null
+- name: placenta_previa
+  description_he: בינארי - שליית פתח.
+  codes_he: null
+- name: chorioamnionitis
+  description_he: בינארי - כוריואמניוניטיס (Chorioamnionitis). זיהום חיידקי חמור של מי השפיר, הקרומים העוטפים את העובר והשליה, המתרחש לרוב לפני הלידה או במהלכה.
+  codes_he: null
+- name: PPH
+  description_he: בינארי - דימום לאחר לידה מוגדר כאובדן דם העולה על 500 מיליליטר (מ"ל) לאחר לידה נרתיקית או יותר מ-1,000 מ"ל לאחר ניתוח קיסרי או אי יציבות המודינמית או סימפטומים של היפובולמיה (תת לחץ דם).
+  codes_he: null
+- name: oligohydramnios
+  description_he: בינארי - מיעוט מי שפיר
+  codes_he: null
+- name: polyhydramnios
+  description_he: בינארי - ריבוי מי שפיר
+  codes_he: null
+- name: meconium_stained_amniotic_fluid
+  description_he: 'בינארי - מי שפיר מיקוניאלים. Meconium stained amniotic fluid (בעברית: מי שפיר מקוניאליים) הוא מצב שבו מי השפיר מעורבבים וצבועים במקוניום (הצואה הראשונית של העובר) מה שמעניק להם גוון ירוק, ירוק-כהה או צהוב-חום.'
+  codes_he: null
+- name: IUFD
+  description_he: בינארי - מוות עוברי תוך רחמי
+  codes_he: null
+- name: celestone
+  description_he: 'בינארי -  סלסטון זוהי תרופה מקבוצת הסטרואידים, ניתנת לצורך הבשלת הריאות כשיש חשד ללידה מוקדמת. כמו כן, מעבר להפחתת סיבוכים נשימתיים, היא מורידה משמעותית תחלואה ותמותה אצל עוברים שנולדים מוקדם, מסייעת במניעת סיבוכים במעיים (NEC) ודימומים מוחיים (IVH). '
+  codes_he: null
+- name: magnesium
+  description_he: בינארי - האם נלקח מגנזיום, במהלך ההריון. המגנזיום מוגדר כNeuroprotection (מגן על מוח העובר בסכנה של לידה מוקדמת עד שבוע 32, ניתן למשך 24 שעות). ומתן מגנזיום הוכח כמפחית ב-40% את הסיכון לשיתוק מוחין (CP), שהסיבה השכיחה ביותר לו היא פגות
+  codes_he: null
+- name: comment_2
+  description_he: למה היא קיבלה Celestone או Magnesium?
+  codes_he: null
+- name: gestational_age_at_delivery
+  description_he: 'גיל הריון בזמן הלידה '
+  codes_he: סוג של מתמשך, כתוב כמספר השבועות פלוס מספר הימים.
+- name: induction_of_labor
+  description_he: מפרט את שיטת/ שיטות הזירוז שבוצעו בפועל, כגון בלון או פיטוצין.
+  codes_he: 0 – התחלה ספונטנית; 1 – בלון; 2 – בלון ופיטוצין; 3 – פרוסטגלנדינים, כגון מיזופרוסטול או פרופס; 4 – פיטוצין; 5 – ניתוח קיסרי.
+- name: start_of_labor
+  description_he: מציין כיצד התחילה הלידה או באיזו שיטת השראה הוחל תהליך הלידה
+  codes_he: 0 – התחלה ספונטנית; 1 – בלון; 2 – בלון ופיטוצין; 3 – פרוסטגלנדינים, כגון מיזופרוסטול או פרופס; 4 – פיטוצין; 5 – ניתוח קיסרי.
+- name: indication_for_induction
+  description_he: מציין את האינדיקציה או הסיבה הרפואית שבגינה הוחלט לבצע זירוז לידה.
+  codes_he: 0 – ללא אינדוקציה; 1 – חלון קלקסן; 2 – מאקרוזומיה; 3 – NRFHR; 4 – גיל היריון; 5 – מיעוט מי שפיר; 6 – סוכרת; 7 – ירידת מים; 8 – מחלת יתר לחץ דם; 9 – IUGR; 10 – אחר.
+- name: CS_case_vs_control
+  description_he: (הבינארי של Type of CS)
+  codes_he: '1 - קיסרי, 0 - ואגינאלי '
+- name: comment_3
+  description_he: פירוט - אינדיקציה לילוד
+  codes_he: null
+- name: trial_of_labor
+  description_he: בינארי - האם התרחש ניסיון לידה ואגינאלית
+  codes_he: null
+- name: type_of_CS
+  description_he: סוג הניתוח הקיסרי
+  codes_he: 'הערך 0 מייצג לידה וגינלית רגילה ומשמש כקבוצת הביקורת של המחקר. ההבחנה בין ניתוח חירום (Emergency, קידוד 2) לניתוח בהול (Urgent, קידוד 3) תלויה בדחיפות הקלינית: בעוד שחירום מאפשר התארגנות מסודרת יחסית (למשל, מוניטור לא תקין אך יציב), ניתוח בהול מבוצע במצבי סכנה מיידית (כמו האטות דופק עוברי שאינן משתפרות) ומחייב פעולה מהירה ביותר.'
+- name: indication_for_CS
+  description_he: אינדיקציה או סיבה לביצוע הניתוח הקיסרי
+  codes_he: null
+- name: comment_4
+  description_he: למה היא נותחה בקיסרי?
+  codes_he: null
+- name: suspected_endo_lesions_during_CS
+  description_he: בינארי - האם בניתוח הCS נצפו נגעים חשודים לאנדומטרזיוס
+  codes_he: null
+- name: abdominal_cavity_findings
+  description_he: בינארי - האם נצפו ממצאים בחלל הבטן במהלך הניתוח הקיסרי הנוכחי
+  codes_he: null
+- name: surgery_dehiscence
+  description_he: בינארי - מציין האם במהלך הניתוח הקיסרי הנוכחי זוהה כי לא נותרה שכבת שריר רחם שלמה, אלא רק שק מי השפיר. זהו מצב חמור הקרוב לקרע רחמי.
+  codes_he: null
+- name: other_surgery_complications
+  description_he: בינארי - האם היו סיבוכים נוספים במהלך/ בעקבות הניתוח הקיסרי
+  codes_he: null
+- name: adhesions
+  description_he: בינארי - האם נצפו הידבקויות במהלך הניתוח הקיסרי הנוכחי
+  codes_he: null
+- name: comment_5
+  description_he: הערות מדוח הניתוח
+  codes_he: null
+- name: blood_loss_during_surgery
+  description_he: כמות דימום בניתוח הקיסרי הנוכחי במיליליטרים
+  codes_he: null
+- name: Hb_before_delivery
+  description_he: כמות המוגלובין לפני הלידה
+  codes_he: null
+- name: Hb_after_delivery
+  description_he: כמות המוגלובין אחרי הלידה
+  codes_he: null
+- name: Hb_diff
+  description_he: ההפרש בין שתי בדיקות ההמוגלובים
+  codes_he: null
+- name: intrapartum_fever
+  description_he: 'בינארי - חום תוך לידתי. '
+  codes_he: null
+- name: postpartum_fever
+  description_he: בינארי - חום לאחר לידה ועד ל - 6 שבועות ראשונים לאחר הלידה
+  codes_he: null
+- name: surgical_site_infection
+  description_he: בינארי - האם הייתה זיהום בצלקת של הניתוח הקיסרי
+  codes_he: null
+- name: endometritis
+  description_he: בינארי - דלקת רירית הרחם (אנדומטריטיס) היא דלקת של השכבה הפנימית של הרחם
+  codes_he: null
+- name: any_blood_product_transfusion
+  description_he: 'בינארי - האם המטופלת קיבלה לאחר הלידה עירוי של מוצר דם כלשהו, כולל פלזמה או קריופרציפיטט. '
+  codes_he: null
+- name: hospitalization_days
+  description_he: מספר ימי האשפוז
+  codes_he: null
+- name: comment_6
+  description_he: פירוט של סיבוכים לאחר הלידה
+  codes_he: null
+- name: gender
+  description_he: מין העובר
+  codes_he: null
+- name: pH_vein
+  description_he: משתנה מספרי רציף של מדידת pH מוריד דם טבורי
+  codes_he: null
+- name: pH_artery
+  description_he: משתנה מספרי רציף של מדידת pH מעורק דם טבורי
+  codes_he: null
+- name: pH_artery_or_vein_less_than_7_1
+  description_he: בינארי - האם הPH מהעורק או מהוריד הטבורי או משניהם היה מתחת לPH 7.1
+  codes_he: null
+- name: apgar1
+  description_he: ציון אפגר דקה ראשונה
+  codes_he: null
+- name: apgar5
+  description_he: ציון אפגר דקה חמישית
+  codes_he: null
+- name: apgar_5_less_than_7
+  description_he: האם ציון האפגר דק 5 מצוי מתחת ל7
+  codes_he: null
+- name: birth_weight
+  description_he: משקל הלידה בגרמים
+  codes_he: null
+- name: percentile_by_Dolberg
+  description_he: אחוזון גדילה על פי דולברג
+  codes_he: null
+- name: SGA
+  description_he: בינארי - עובר קטן לגיל ההיריון נמדד לאחר הלידה
+  codes_he: null
+- name: LGA
+  description_he: בינארי - עובר גדול לגיל ההיריון נמדד לאחר הלידה
+  codes_he: null
+- name: IVH
+  description_he: בינארי - דימום מוחי תוך חדרי בתינוק
+  codes_he: null
+- name: IVH_grade_1_2
+  description_he: בינארי - דימום מוחי תוך חדרי בתינוק (דרגה קלה)
+  codes_he: null
+- name: IVH_grade_3_4
+  description_he: בינארי - דימום מוחי תוך חדרי בתינוק (דרגה חמורה)
+  codes_he: null
+- name: NICU_admission
+  description_he: בינארי - האם התינוק עבר לטיפול נמרץ ילודים / פגייה
+  codes_he: null
+- name: RDS
+  description_he: בינארי - המשתנה RDS מייצג Respiratory Distress Syndrome (תסמונת מצוקה נשימתית) בילוד
+  codes_he: null
+- name: mechanical_ventilation
+  description_he: בינארי - מציין האם היילוד קיבל הנשמה מכנית פולשנית באמצעות אינטובציה והחדרת צינור לקנה הנשימה. הנשמה באמצעות מסכה אינה נחשבת לצורך משתנה זה.
+  codes_he: null
+- name: length_of_mechanical_ventilation
+  description_he: מציין את משך הזמן שבו היילוד קיבל הנשמה מכנית פולשנית באמצעות אינטובציה.
+  codes_he: null
+- name: NEC
+  description_he: בינארי - דלקת נמקית של המעי. זוהי מחלת מעיים חמורה ודלקתית הפוגעת בעיקר בפגים ובתינוקות שנולדו במשקל לידה נמוך מאוד.
+  codes_he: null
+- name: sepsis
+  description_he: בינארי - מציין האם היילוד אובחן באלח דם מוקדם לאחר הלידה, בעיקר במהלך הימים הראשונים ועד שבוע מהלידה.
+  codes_he: null
+- name: hypoglycemia
+  description_he: בינארי - היפוגליקמיה בתינוק. היפוגליקמיה בתינוק (Neonatal Hypoglycemia) היא מצב רפואי שבו רמת הסוכר (גלוקוז) בדם נמוכה מהנורמה התקינה לגיל התינוק
+  codes_he: null
+- name: neonatal_jaundice_used_phototherapy
+  description_he: בינארי - האם היילוד פיתח צהבת לאחר הלידה וקיבל טיפול בפוטותרפיה
+  codes_he: null
+- name: neonatal_death
+  description_he: בינארי - מוות של היילוד (לאחר הלידה); להבדיל מ-IUFD המציין מוות עוברי תוך רחמי לפני הלידה
+  codes_he: null
+- name: age_at_neonatal_death
+  description_he: גיל היילוד בעת המוות (לא גיל עוברי)
+  codes_he: null
+- name: congenital_anomaly
+  description_he: 'בינארי - האם אובחן אצל היילוד מום מולד כלשהו? '
+  codes_he: null
+- name: congenital_anomaly_comment
+  description_he: פירוט המום המולד אצל הילוד
+  codes_he: null
+- name: long_term_outcome
+  description_he: בינארי - האם ידוע על תוצא ארוך טווח אצל הילוד
+  codes_he: null
+- name: long_term_outcome_comment
+  description_he: פירוט התוצא ארוך הטווח אצל התינוק
+  codes_he: null
