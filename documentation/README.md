@@ -36,7 +36,8 @@ they mention refers to the canonical repository rather than this package.
 - `SUBMISSION_MANIFEST.md` (submission root) — the top-level map of this
   entire package, including deliberate exclusions and why.
 - `src/preprocessing/README.md` — explains what preprocessing source is
-  and isn't included, and why (the privacy-motivated exclusion of the
-  record-level orchestrator).
+  included and what was redacted, and why (the orchestrator and its
+  supporting modules are included in privacy-redacted form; record-specific
+  adjudication keys and rationale are removed).
 - `data/README.md` — explains why no patient-level data is included and
   what that means for reproducibility.

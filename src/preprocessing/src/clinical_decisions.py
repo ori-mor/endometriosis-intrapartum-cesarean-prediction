@@ -28,7 +28,9 @@ import pandas as pd
 # PRIVACY REDACTION NOTICE
 # The canonical private source contains record-level composite-key decisions here.
 # Their literal subject/delivery identifiers and patient-specific rationale have been
-# removed from this review package. The schema and application logic are retained.
+# removed from this public privacy-redacted repository copy. The schema and
+# application/validation logic are retained; the tables below are intentionally
+# empty (schema-only) as a result.
 
 ADENOMYOSIS_MANUAL_FEATURE_DECISIONS = pd.DataFrame(
     columns=["subject_number", "delivery_id", "manual_codes", "rule_label", "rule_reason"]

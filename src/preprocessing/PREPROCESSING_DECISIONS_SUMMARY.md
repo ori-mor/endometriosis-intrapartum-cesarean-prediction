@@ -2,12 +2,17 @@
 
 Examiner-facing summary of the **final** decisions embodied in the raw-data
 preprocessing stage (`src/preprocessing/run_preprocessing.py`, Batches
-1-19), which converts the raw Sheba workbook into
-`outputs/preprocessing/processed/work_df_batch18.xlsx` (431 rows x 156
-columns). This is a summary of *outcomes*, not a chronology — it describes
+1-19), which converts the raw Sheba workbook into `work_df_batch18.xlsx`
+(431 rows x 156 columns) — written to `outputs/preprocessing/processed/` in
+the canonical private pipeline; that output path is not part of this public
+repository. This is a summary of *outcomes*, not a chronology — it describes
 only the rules and classifications currently in force. It is not a
-substitute for the executable code, which is the actual source of truth and
-is now included in this package (see "Where to look" at the end).
+substitute for the code: for inspecting the general preprocessing
+implementation and methodology, the privacy-redacted source now included in
+this repository is the reference (see "Where to look" at the end); the
+confidential canonical source remains the sole authority for exact
+record-specific behavior, since this copy's record-level adjudications have
+been redacted.
 
 This document is new to this repository (added alongside the privacy-redacted
 preprocessing source — see the root `README.md`).
@@ -205,7 +210,9 @@ batch-by-batch in `run_preprocessing.py`; the notable rules are:
 Batch 19 (the final batch) inventories every one of the 156 analytical
 columns and assigns exactly one classification and one type. Current
 classification counts (also machine-verified against
-`outputs/preprocessing/audit/variable_classification_minimal.csv`):
+`outputs/preprocessing/audit/variable_classification_minimal.csv` in the
+canonical private pipeline; the corresponding snapshot in this public
+repository is `results/tables/modeling_handoff/variable_classification_snapshot.csv`):
 
 | Classification | Count |
 |---|---|
@@ -245,13 +252,14 @@ per-analysis judgement, is the single enforcement point). Examples include
 `any_blood_product_transfusion`, and every neonatal outcome (birth weight,
 Apgar, NICU/RDS/IVH/sepsis/etc.). `gender` is excluded as
 newborn-derived/unavailable at prediction time. The full, current,
-authoritative, machine-checked list is
-`outputs/preprocessing/audit/variable_classification_minimal.csv` (every
-row classified `leakage_exclude`,
+machine-checked list is `outputs/preprocessing/audit/variable_classification_minimal.csv`
+in the canonical private pipeline (every row classified `leakage_exclude`,
 `intrapartum_or_post_delivery_exclude`, or
-`intrapartum_predictor_exclude_from_prelabor_model`), together with the
-classification logic itself in the included executable code
-(`run_preprocessing.py`, Batch 19).
+`intrapartum_predictor_exclude_from_prelabor_model`); the corresponding
+snapshot in this public repository is
+`results/tables/modeling_handoff/variable_classification_snapshot.csv`,
+together with the classification logic itself in the general-methodology
+source included here (`run_preprocessing.py`, Batch 19).
 
 ## 9. Major endometriosis-specific transformations
 
@@ -292,13 +300,16 @@ package's own EDA-C-onward outputs) actually consumes.
 
 ## Where to look for more detail
 
-- **Record-level decisions and the exact rule implementation**: this
-  summary intentionally omits per-record detail. The authoritative,
-  executable source is now included in this repository —
+- **The general rule implementation**: this summary intentionally omits
+  per-record detail. The privacy-redacted source for inspecting the general
+  methodology is included in this repository —
   `src/preprocessing/run_preprocessing.py` and
   `src/preprocessing/src/{preprocessing_config,preprocessing_utils,
   clinical_decisions,adenomyosis_rules,endometrioma_rules}.py`. Every rule
-  described above traces to a specific, commented block there.
+  described above traces to a specific, commented block there. The
+  confidential canonical source remains the sole authority for exact
+  record-level decisions, since this copy's record-specific adjudication
+  rows have been redacted.
 - **Full chronological decision log** (thousands of lines; how each rule
   above was arrived at, superseded drafts, and the clinical discussion
   behind it): `docs/clinical_decisions/` is **not** included in this

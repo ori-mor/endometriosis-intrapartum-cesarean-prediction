@@ -3,9 +3,9 @@ Endometriosis Delivery Study — Data Preprocessing Module
 
 In the canonical private project, this module is the single executable pipeline
 that converts the research clinical Excel dataset into a standardized, auditable
-analytical dataset. This public-review copy preserves the pipeline structure and
-general deterministic logic, but record-specific correction keys and rationales
-are redacted as documented below.
+analytical dataset. This privacy-redacted public repository copy preserves the
+pipeline structure and general deterministic logic, but record-specific
+correction keys and rationales are redacted as documented below.
 It is the required first stage of the analysis pipeline: exploratory data
 analysis (EDA) and predictive modeling are performed only on its output, and
 neither stage repeats or re-derives the transformations implemented here.
@@ -22,7 +22,8 @@ Preprocessing responsibilities implemented in this module:
 - Approved exclusions: records and variables that fall outside the
   analytical cohort or are not clinically appropriate as predictors are
   excluded, strictly according to clinical decisions approved and logged in
-  docs/clinical_decisions/manual_decisions_log.md.
+  docs/clinical_decisions/manual_decisions_log.md in the canonical private
+  workspace (not part of this public repository).
 - Variable cleaning and derivation: demographic, obstetric, endometriosis,
   pregnancy, delivery, maternal, and neonatal variables are cleaned and
   standardized, and new variables are derived from documented source
@@ -34,10 +35,14 @@ Preprocessing responsibilities implemented in this module:
   clinically applicable to a subgroup of records (e.g. cesarean-only or
   surgery-only fields), values outside that subgroup are set to missing
   rather than treated as a false negative/zero.
-- Manual record-level corrections: clinically approved corrections are
-  applied only via validated subject_number + delivery_id composite keys,
-  never by value alone, with hard validation against duplicate or unmatched
-  keys.
+- Manual record-level corrections: in the canonical private implementation,
+  clinically approved corrections are applied only via validated
+  subject_number + delivery_id composite keys, never by value alone, with
+  hard validation against duplicate or unmatched keys. In this redacted
+  public copy the validation/application mechanism is unchanged, but the
+  record-level correction tables it operates on are empty (see
+  src/preprocessing/src/clinical_decisions.py), so no corrections are
+  applied here.
 - Manual-review exports: unresolved, contradictory, or unexpected values are
   exported to dedicated review files for clinical review instead of being
   silently auto-corrected or guessed.
@@ -47,8 +52,8 @@ Preprocessing responsibilities implemented in this module:
   available at prediction time.
 - Reproducibility and audit outputs: the canonical private implementation produces
   processed datasets, batch-level summaries, a deviation log, and an audit trail.
-  This redacted review copy is not intended for exact execution because individual
-  adjudication keys have been removed.
+  This redacted public repository copy is not intended for exact execution because
+  individual adjudication keys have been removed.
 
 The workflow is organized into sequential, numbered batch functions (Batch 1
 through Batch 19). Each batch handles a defined clinical or analytical
@@ -61,14 +66,17 @@ downstream data cleaning, exploratory analysis, and modeling stages.
 
 This is a plain Python module, not a notebook. Manual clinical decision
 tables and their composite-key validation/application logic live in
-src/clinical_decisions.py; deterministic adenomyosis and endometrioma
-free-text parsing rules live in src/adenomyosis_rules.py and
-src/endometrioma_rules.py respectively. This module imports from those and
-focuses on orchestration: the sequential Batch 1-19 functions and main().
+src/preprocessing/src/clinical_decisions.py (repository-root-relative;
+src/clinical_decisions.py relative to this module's own directory);
+deterministic adenomyosis and endometrioma free-text parsing rules live in
+src/preprocessing/src/adenomyosis_rules.py and
+src/preprocessing/src/endometrioma_rules.py respectively. This module
+imports from those and focuses on orchestration: the sequential Batch 1-19
+functions and main().
 
 Run from the project root:
 
-    python analysis/preprocessing/run_preprocessing.py
+    python src/preprocessing/run_preprocessing.py
 
 Only the approved batch functions called from main() are executed.
 """
@@ -151,7 +159,7 @@ def resolve_path(relative):
 
 
 # ---------------------------------------------------------------------------
-# PRIVACY-REDACTED REVIEW COPY
+# PRIVACY-REDACTED PUBLIC REPOSITORY COPY
 # ---------------------------------------------------------------------------
 # This file preserves the preprocessing orchestration and general deterministic
 # logic, but literal record keys and patient-specific adjudication text have been
@@ -882,46 +890,32 @@ def batch_2_cohort_target(work_df, cohort_mode=None):
     # Exclude a record when placenta_accreta==1 OR placenta_previa==1 -- these
     # materially change intrapartum management and are not representative of
     # the general trial-of-labor cohort. The exclusion criterion is these two
-    # placenta columns only; delivery outcome plays no part in it. A later
-    # step (after the Decision 67 mask is frozen) validates that the excluded
-    # record was in the expected vaginal-delivery group -- that check does not
-    # define this exclusion rule.
+    # placenta columns only; delivery outcome plays no part in it.
+    #
+    # PUBLIC REDACTION BOUNDARY (not a scientific-method change): Decision 32
+    # is a protected, record-specific cohort adjudication. In the canonical
+    # private implementation, the approved exclusion is applied and logged
+    # with its exact affected-record count and composite key. This public
+    # privacy-redacted copy intentionally does not encode that protected
+    # count or any real subject_number/delivery_id value anywhere -- not in
+    # an assertion, a deviation-log entry, or a console print. If this
+    # protected condition is ever actually encountered here, this redacted
+    # copy stops with a generic message rather than executing the
+    # record-specific exclusion or approximating a replacement rule; exact
+    # execution of Decision 32 requires the canonical private preprocessing
+    # source. See src/preprocessing/REDACTION_NOTICE.md.
     _placenta_mask = (work_df["placenta_accreta"] == 1) | (work_df["placenta_previa"] == 1)
-    _n_placenta_affected = int(_placenta_mask.sum())
-    if _n_placenta_affected > 1:
-        raise AssertionError(
-            f"Placenta exclusion gate FAILED: expected exactly 1 affected record, "
-            f"found {_n_placenta_affected}. Stopping -- do not remove records "
-            "without re-approval. See docs/clinical_decisions/manual_decisions_log.md, "
-            "Decision 32."
+    if bool(_placenta_mask.any()):
+        raise NotImplementedError(
+            "Decision 32 (placenta_accreta/previa protected cohort exclusion) "
+            "cannot be executed from this privacy-redacted public repository "
+            "copy: the record-specific adjudication has been redacted and is "
+            "intentionally not reproduced here. Exact execution requires the "
+            "canonical private preprocessing source."
         )
-    if _n_placenta_affected == 1:
-        # The row is captured here so the deferred vaginal-group validation
-        # (after the Decision 67 mask is frozen, below) has the data it needs.
-        _placenta_affected_row = work_df.loc[_placenta_mask].copy()
-        _placenta_subject = _placenta_affected_row["subject_number"].iloc[0]
-        _placenta_delivery = _placenta_affected_row["delivery_id"].iloc[0]
-        append_deviation(
-            path=deviations_md,
-            variable="placenta_accreta / placenta_previa",
-            raw_variable="placenta accreta / placenta previa",
-            documented="Exclude an analytical record when placenta_accreta==1 OR placenta_previa==1.",
-            action=f"Excluded 1 analytical record (subject_number={_placenta_subject}, "
-                   f"delivery_id={_placenta_delivery}) -- verified single-record, "
-                   "vaginal-delivery case per the approved conditional-execution gate.",
-            reason="Placenta accreta/previa materially change intrapartum management and are "
-                   "not representative of the general trial-of-labor cohort; approved for "
-                   "removal only because exactly one analytical record was affected.",
-            requires_approval=False,
-            batch="Batch 2",
-            affected_count=1,
-        )
-        work_df = work_df[~_placenta_mask].reset_index(drop=True)
-        print(f"  Placenta accreta/previa exclusion: 1 record removed "
-              f"(subject_number={_placenta_subject}, delivery_id={_placenta_delivery}); "
-              f"cohort now {len(work_df)} rows")
-    else:
-        print("  Placenta accreta/previa exclusion: 0 affected records found; no exclusion applied.")
+    _n_placenta_affected = 0
+    print("  Placenta accreta/previa exclusion (Decision 32): no affected records found "
+          "in this run; no exclusion applied.")
 
     # Both columns are retired from the downstream analytical dataset now that
     # they have been used for cohort construction -- not retained as
@@ -1014,21 +1008,15 @@ def batch_2_cohort_target(work_df, cohort_mode=None):
     _decision67_excluded_delivery_ids = set(work_df.loc[_decision67_mask, "delivery_id"].tolist())
     assert len(_decision67_excluded_delivery_ids) == 16
 
-    # Deferred Decision-32 validation: after the Decision-67 eligibility mask
-    # is fixed, confirm that the previously identified placenta case belongs
-    # to the expected vaginal-delivery group. This validation does not
-    # determine Decision-67 eligibility.
-    if _n_placenta_affected == 1:
-        _placenta_type_of_cs = _placenta_affected_row["type_of_CS"].iloc[0]
-        if _placenta_type_of_cs != 0:
-            raise AssertionError(
-                f"Placenta exclusion gate FAILED: the single affected record "
-                f"(subject_number={_placenta_subject}, delivery_id={_placenta_delivery}) "
-                f"is not in the expected vaginal delivery group (type_of_CS={_placenta_type_of_cs}). "
-                "Stopping -- investigate before trusting this run."
-            )
-        print(f"  Placenta exclusion deferred check: subject_number={_placenta_subject}, "
-              f"delivery_id={_placenta_delivery} confirmed vaginal delivery group -- PASSED")
+    # Deferred Decision-32 validation: in the canonical private
+    # implementation, this step confirms (after the Decision-67 eligibility
+    # mask is fixed) that the previously identified placenta case belongs to
+    # the expected vaginal-delivery group. In this public privacy-redacted
+    # copy, Step 5 above already stops execution generically if any
+    # placenta_accreta/previa-affected record is present, so this
+    # record-specific deferred check never has a record to validate here and
+    # is intentionally not reproduced (no composite key or record data is
+    # retained across batches in this redacted copy).
 
     # Sensitivity cohorts (Decision 67): broader exclusion definitions used
     # only for cohort-robustness checks, never applied to the primary
@@ -1533,7 +1521,7 @@ def batch_3_obstetric_history(work_df):
     # ------------------------------------------------------------------
     # The canonical private source applies one clinically approved correction by
     # subject_number + delivery_id. The key and patient-specific rationale are
-    # omitted from this review copy. No record-specific correction is executed here.
+    # omitted from this public repository copy. No record-specific correction is executed here.
     s_p_cs_before = df["S_P_CS"].copy()
     n_recoded = 0
     _redacted_spcs_mask = pd.Series(False, index=df.index)
@@ -2794,7 +2782,7 @@ def batch_7_endometrioma(work_df):
 
     # Documented QA correction — single record [RECORD KEY REDACTED]
     # Canonical private source applies the approved correction here.
-    # This review copy preserves the surrounding method but executes no row-key correction.
+    # This public repository copy preserves the surrounding method but executes no row-key correction.
     note_record_specific_endometrioma = "approved single-record correction: key and rationale redacted"
 
     n_endo_changed = int((df["endometrioma"] != work_df["endometrioma"]).sum())
@@ -3274,7 +3262,7 @@ def batch_8_endometriosis_surgery(work_df):
 
     # Canonical private source contains a small table of manually reviewed
     # subject_number + delivery_id decisions here. Literal keys and patient-specific
-    # clinical rationales are omitted from this privacy-redacted review copy.
+    # clinical rationales are omitted from this privacy-redacted public repository copy.
     manual_endo_surgery_decisions = {}
 
 
@@ -3638,7 +3626,7 @@ def batch_8_endometriosis_surgery(work_df):
 
     # Canonical private source also verifies a small set of reviewed
     # composite-key resection expectations. Record keys and per-record expected
-    # label combinations are redacted from this review copy.
+    # label combinations are redacted from this public repository copy.
     reviewed_resection_expectations = {}
     for (subject_number, delivery_id), expected_clean in reviewed_resection_expectations.items():
         pass
@@ -4858,7 +4846,7 @@ def batch_12_hypertension_diabetes(work_df):
       pregnancy_related_hypertensive_disorder: approved single-record
       record-specific correction applied before the umbrella derivation above
       in the canonical private source (Decision 76); record key and source excerpt
-      are redacted in this review copy.
+      are redacted in this public repository copy.
 
     Returns: df — the working DataFrame with hypertension/diabetes
     variables cleaned.
@@ -5503,7 +5491,7 @@ def batch_13_pregnancy_complications(work_df):
     placental_abruption, chorioamnionitis, PPH, oligo/polyhydramnios,
     meconium-stained fluid, IUFD, celestone, magnesium). placenta_accreta
     and placenta_previa are not handled here — they were already used for
-    the one-record cohort exclusion and dropped entirely in Batch 2
+    the protected small-cell cohort exclusion and dropped entirely in Batch 2
     (Decision 32).
 
     IUFD (Decision 49, 2026-08-01): current-pregnancy intrauterine fetal
@@ -6000,7 +5988,7 @@ def batch_14_labor_induction(work_df):
     # The canonical private source verifies one composite-key record whose source
     # workbook had been manually corrected before preprocessing. The composite key,
     # exact corrected source values, and patient-specific free-text excerpt are
-    # intentionally removed from this review package.
+    # intentionally removed from this public repository copy.
     # No value is changed here; this redacted copy is not executable reproduction.
 
     # ------------------------------------------------------------------
@@ -8317,9 +8305,10 @@ def batch_19_qa_inventory_and_classification(df):
                 # secondary_near_delivery_predictor group below (students +
                 # Keren: may be identified close to the delivery episode).
                 # placenta_accreta, placenta_previa: removed here 2026-07-30
-                # (Decision 32) -- used for a one-record cohort exclusion in
-                # Batch 2, then dropped from the analytical dataset entirely;
-                # no longer present in df, so no longer classified.
+                # (Decision 32) -- used for a protected small-cell cohort
+                # exclusion in Batch 2, then dropped from the analytical
+                # dataset entirely; no longer present in df, so no longer
+                # classified.
                 # oligohydramnios: moved here 2026-07-30 (Decision 37, EDA B14
                 # DEC-04) -- to intrapartum_candidate_pending_timing_confirmation
                 # below. Timing (antenatal ultrasound vs. admission vs. during

@@ -55,9 +55,10 @@ Two kinds of record-level content have been removed from the files above:
    that this project's disclosure policy treats as protected and does not
    print as a literal, even in an examiner-facing summary.
 
-The general algorithm, validation logic, thresholds, and schema are
-retained in full — nothing about *how* the pipeline works was removed,
-only the specific record identifiers and per-record adjudication text.
+The general, non-record-specific algorithm, validation logic, thresholds,
+and schema are retained in full — nothing about the general architecture of
+*how* the pipeline works was removed, only the specific record identifiers
+and per-record adjudication text.
 
 ## Consequence for reproducibility
 
@@ -68,8 +69,8 @@ reproduce the handful of individually-adjudicated records identically,
 since the composite-key decision tables that would re-apply those specific
 corrections are now empty. Everything else in the pipeline — cohort
 construction, deterministic cleaning/recoding, feature construction, and
-QA — is unchanged and traces exactly to what actually produced
-`work_df_batch18.xlsx`. Full raw-to-final reproduction in any case also
+QA — is the same general logic that produced `work_df_batch18.xlsx` in the
+canonical pipeline. Full raw-to-final reproduction in any case also
 requires the confidential source workbook, which is not part of this
 repository (see the root `README.md`, reproducibility tier 5).
 

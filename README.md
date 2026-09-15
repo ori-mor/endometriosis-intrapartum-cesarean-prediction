@@ -93,8 +93,9 @@ supporting rule/config modules, in privacy-redacted form:
   per-record clinical adjudication text tied to them have been redacted
   from the preprocessing source.
 - The preprocessing source is provided for methodological and code
-  inspection — to let a reader see exactly how the raw clinical workbook is
-  turned into the analytical dataset.
+  inspection — to let a reader see the general preprocessing architecture and
+  deterministic transformation logic used to turn the raw clinical workbook
+  into the analytical dataset.
 - Because the record-specific adjudications were redacted, this public
   preprocessing copy is **not** an exact executable reproduction of the
   confidential raw-data pipeline.

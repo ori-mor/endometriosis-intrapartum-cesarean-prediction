@@ -8,7 +8,7 @@ import os as _os
 # Anchored to this file's own location, not the process working directory
 # (PARTNER-FIX-04, finding F-5), so raw-file discovery resolves the same
 # canonical file regardless of the directory the caller was invoked from.
-# This file lives at analysis/preprocessing/src/preprocessing_config.py, so
+# This file lives at src/preprocessing/src/preprocessing_config.py, so
 # the project root is 3 levels up.
 _PROJECT_ROOT = _os.path.abspath(_os.path.join(_os.path.dirname(__file__), "..", "..", ".."))
 
@@ -84,13 +84,13 @@ CURRENT_APPROVED_TARGET_N1 = 61
 CURRENT_COHORT_DECISION = "Decision 67"
 CURRENT_COHORT_AS_OF = "2026-08-15"
 
-# Decision 32 (2026-07-29): one-record cohort exclusion for a documented
-# placenta_accreta/previa case. This count is a protected small cell (n<5)
-# under this project's disclosure policy and must never appear as a literal
-# in any rendered notebook cell's source or output -- only here, in a plain
-# config module that is imported (never displayed) by the notebooks that
-# need it. See docs/clinical_decisions/manual_decisions_log.md Decision 32.
-DECISION_32_PLACENTA_EXCLUDED_ROWS = None  # exact protected small-cell count redacted in public review copy
+# Decision 32 (2026-07-29): protected small-cell cohort exclusion for a
+# documented placenta_accreta/previa case. This count is a protected small
+# cell (n<5) under this project's disclosure policy and must never appear as
+# a literal in any rendered notebook cell's source or output -- only here, in
+# a plain config module that is imported (never displayed) by the notebooks
+# that need it. See docs/clinical_decisions/manual_decisions_log.md Decision 32.
+DECISION_32_PLACENTA_EXCLUDED_ROWS = None  # exact protected small-cell count redacted in this public repository copy
 
 # ---------------------------------------------------------------------------
 # COLUMN MAPPING
